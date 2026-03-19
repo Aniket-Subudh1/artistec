@@ -22,11 +22,11 @@ type Project = {
 
 const projects: Project[] = [
   {
-    id: '001',
-    name: 'ArtistOS',
-    tagline: 'An all-in-one digital operating platform for modern enterprises â€” managing teams, tools, and deployments in one unified workspace.',
-    category: ['Platform', 'SaaS', 'AI'],
-    year: '2025',
+    id: 'P01',
+    name: 'PGMaster',
+    tagline: 'Smart PG & hostel management platform',
+    category: ['SaaS', 'React', 'PostgreSQL'],
+    year: '2024',
     status: 'Live',
     gradient: 'linear-gradient(140deg, #ede9ff 0%, #ddd5ff 40%, #c8bffa 100%)',
     accentColor: '#6d4ef7',
@@ -34,26 +34,28 @@ const projects: Project[] = [
     chipStyle: 'bg-white/60 text-[#5b3fe0] border border-[#c5b8f8]',
     statusStyle: 'bg-[#6d4ef7]/10 text-[#6d4ef7] border border-[#6d4ef7]/25',
     span: 'col-span-12 md:col-span-7',
+    image: '/projects/PGMaster.png',
   },
   {
-    id: '002',
-    name: 'SkyBridge',
-    tagline: 'Autonomous drone routing and fleet intelligence for last-mile delivery at scale.',
-    category: ['Drones', 'Robotics'],
+    id: 'P02',
+    name: 'Saveful',
+    tagline: 'Personal finance & smart savings tracker',
+    category: ['Web App', 'Next.js', 'Supabase'],
     year: '2025',
-    status: 'Shipped',
+    status: 'Live',
     gradient: 'linear-gradient(140deg, #faf0ff 0%, #f2e0ff 40%, #e8ccff 100%)',
     accentColor: '#9333ea',
     textColor: '#6b21a8',
     chipStyle: 'bg-white/60 text-[#7e22ce] border border-[#dbb8f8]',
     statusStyle: 'bg-[#9333ea]/10 text-[#9333ea] border border-[#9333ea]/25',
     span: 'col-span-12 md:col-span-5',
+    image: '/projects/Saveful.png',
   },
   {
-    id: '003',
-    name: 'NeuralCRM',
-    tagline: 'AI-powered customer relationship management that predicts, automates, and converts.',
-    category: ['AI', 'CRM', 'Automation'],
+    id: 'P04',
+    name: 'JogaadIndia',
+    tagline: "India's innovation & jugaad marketplace",
+    category: ['Platform', 'Next.js', 'MongoDB'],
     year: '2024',
     status: 'Live',
     gradient: 'linear-gradient(140deg, #eef1ff 0%, #e0e5ff 40%, #d0d6ff 100%)',
@@ -62,12 +64,13 @@ const projects: Project[] = [
     chipStyle: 'bg-white/60 text-[#3a47c2] border border-[#c2c9f5]',
     statusStyle: 'bg-[#4f5edb]/10 text-[#4f5edb] border border-[#4f5edb]/25',
     span: 'col-span-12 md:col-span-4',
+    image: '/projects/JogaadIndia.png',
   },
   {
-    id: '004',
-    name: 'KuwaIT Commerce',
-    tagline: 'A full-stack e-commerce platform built for MENA merchants with AR product previews.',
-    category: ['E-Commerce', 'Web', 'AR'],
+    id: '05',
+    name: 'GT Tech',
+    tagline: 'Industry 4.0 solutions for digital transformation',
+    category: ['Web App', 'Next.js', 'AWS'],
     year: '2024',
     status: 'Live',
     gradient: 'linear-gradient(140deg, #f5ebff 0%, #ead8ff 40%, #dcc1ff 100%)',
@@ -76,20 +79,22 @@ const projects: Project[] = [
     chipStyle: 'bg-white/60 text-[#7a1fb8] border border-[#d4a8f5]',
     statusStyle: 'bg-[#8b2fc9]/10 text-[#8b2fc9] border border-[#8b2fc9]/25',
     span: 'col-span-12 md:col-span-4',
+    image: '/projects/gttech.png',
   },
   {
-    id: '005',
-    name: 'VoxAI',
-    tagline: 'Voice-to-content AI that generates branded copy, captions, and campaigns from a single prompt.',
-    category: ['AI Content', 'Voice', 'SaaS'],
-    year: '2026',
-    status: 'In Development',
+    id: '06',
+    name: 'QwikTest',
+    tagline: 'Online examination and assessment platform',
+    category: ['SaaS', 'React', 'MongoDB'],
+    year: '2024',
+    status: 'Live',
     gradient: 'linear-gradient(140deg, #f0edff 0%, #e5dfff 40%, #d8d0ff 100%)',
     accentColor: '#7c5cf0',
     textColor: '#4c34b0',
     chipStyle: 'bg-white/60 text-[#6441e0] border border-[#c8bef8]',
     statusStyle: 'bg-[#7c5cf0]/10 text-[#7c5cf0] border border-[#7c5cf0]/25',
     span: 'col-span-12 md:col-span-4',
+    image: '/projects/qwiktest.png',
   },
 ];
 
@@ -103,7 +108,7 @@ function ProjectCard({
   visible: boolean;
 }) {
   const [hovered, setHovered] = useState(false);
-  const isFeatured = project.id === '001';
+  const isFeatured = project.id === 'P01';
 
   return (
     <div
@@ -167,8 +172,33 @@ function ProjectCard({
       {isFeatured ? (
         /* Featured card: left content + right image panel */
         <div className="relative z-10 flex h-full flex-col lg:flex-row">
+          {/* Mobile/tablet image panel */}
+          <div
+            className="relative flex items-center justify-center overflow-hidden lg:hidden"
+            style={{
+              background: `linear-gradient(135deg, ${project.accentColor}18 0%, ${project.accentColor}0a 100%)`,
+              height: '130px',
+              borderBottom: `1px dashed ${project.accentColor}33`,
+            }}
+          >
+            {project.image ? (
+              <img src={project.image} alt={project.name} className="h-full w-full object-cover" />
+            ) : (
+              <div className="flex flex-col items-center gap-2 select-none" aria-hidden>
+                <div className="rounded-lg border-2 border-dashed p-3.5" style={{ borderColor: project.accentColor + '38' }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={project.accentColor} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.45">
+                    <rect x="3" y="3" width="18" height="18" rx="2"/>
+                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                    <polyline points="21 15 16 10 5 21"/>
+                  </svg>
+                </div>
+                <span className="text-[8.5px] font-semibold tracking-[0.16em] uppercase" style={{ color: project.accentColor + '55' }}>Preview</span>
+              </div>
+            )}
+          </div>
+
           {/* Left: content */}
-          <div className="flex flex-1 flex-col justify-between p-8 sm:p-10 lg:max-w-[55%]">
+          <div className="flex flex-1 flex-col justify-between p-6 lg:max-w-[55%] lg:p-8 xl:p-10">
             {/* Top row */}
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-wrap gap-1.5">

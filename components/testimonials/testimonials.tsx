@@ -92,8 +92,8 @@ function ReviewCard({
   return (
     <figure className={cn(
       'relative w-72 shrink-0 cursor-pointer overflow-hidden rounded-2xl border p-5',
-      'border-[#c4b0f2]/40 bg-[#f5f2ff]/70',
-      'hover:bg-[#ede8ff]/90 hover:border-[#a78bfa]/60',
+      'border-[#bca6f2]/45 bg-[var(--card-surface-soft)]/85',
+      'hover:bg-[var(--card-surface)]/95 hover:border-[#a78bfa]/60',
       'transition-all duration-300',
     )}>
       {/* Radial glow */}

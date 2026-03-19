@@ -19,6 +19,11 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --hero-ribbon: #c9b8f6;
+  --hero-ribbon-soft: #d7c8fb;
+  --card-surface: #e3d7ff;
+  --card-surface-soft: #efe6ff;
+  --card-surface-strong: #ddd0ff;
 }
 
 @theme inline {

@@ -7,7 +7,7 @@ import Lottie from 'lottie-react';
 import webAnim from '@/public/animation/web.json';
 import aiAnim from '@/public/animation/ai.json';
 import crmAnim from '@/public/animation/crm.json';
-import droneAnim from '@/public/animation/drone.json';
+import droneAnim from '@/public/animation/robot.json';
 
 import { ScrambleText } from '@/components/ui/scramble-text';
 import { Terminal } from '@/components/ui/terminal';
@@ -51,13 +51,14 @@ const services = [
   },
 ];
 
-const mapDots = [
-  { start: { lat: 29.3759, lng: 47.9774 }, end: { lat: 42.5869, lng: -82.9194 } },
-  { start: { lat: 29.3759, lng: 47.9774 }, end: { lat: 20.2961, lng: 85.8245 } },
-  { start: { lat: 29.3759, lng: 47.9774 }, end: { lat: 48.8566, lng: 2.3522 } },
-  { start: { lat: 20.2961, lng: 85.8245 }, end: { lat: 48.8566, lng: 2.3522 } },
-];
+const shiftLng = 8; 
 
+const mapDots = [
+  { start: { lat: 13.3759, lng: 41.9774 + shiftLng }, end: { lat: 42.5869, lng: -82.9194 + shiftLng } },
+  { start: { lat: 13.3759, lng: 41.9774 + shiftLng }, end: { lat: 20.2961, lng: 85.8245 + shiftLng } },
+  { start: { lat: 13.3759, lng: 41.9774 + shiftLng }, end: { lat: 48.8566, lng: 2.3522 + shiftLng } },
+  { start: { lat: 20.2961, lng: 85.8245 + shiftLng }, end: { lat: 48.8566, lng: 2.3522 + shiftLng } },
+];
 function BentoCard({
   animationData,
   title,
@@ -100,7 +101,7 @@ function BentoCard({
         )}
         style={{ height: '22rem' } as React.CSSProperties}
       >
-        <div className="h-full w-full bg-[#ede8ff] transition-transform duration-700 ease-out group-hover:scale-[1.03]">
+        <div className="h-full w-full bg-[var(--card-surface)] transition-transform duration-700 ease-out group-hover:scale-[1.03]">
           <Lottie
             animationData={animationData}
             loop
@@ -110,7 +111,7 @@ function BentoCard({
         </div>
 
         <BlurVignetteArticle classname="h-[36%] w-[calc(100%-1rem)] ml-2 mt-auto mb-2">
-          <div className="flex h-full flex-col justify-start gap-1.5 rounded-[14px] border border-[#c4b0f2]/30 bg-[#7c3aed]/20 px-4 pb-4 pt-3">
+          <div className="flex h-full flex-col justify-start gap-1.5 rounded-[14px] border border-[#b79cee]/35 bg-[#7c3aed]/24 px-4 pb-4 pt-3">
             <div className="flex items-center justify-between">
               <span className="text-[9px] font-semibold uppercase tracking-[0.28em] text-[#6d28d9]/70">
                 {tag}
@@ -166,8 +167,51 @@ export default function Services() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-24 sm:px-8 md:px-12 lg:px-16 xl:px-24">
 
         <div
-          className={cn('mb-14 flex items-stretch gap-8', !visible ? 'card-hidden' : 'card-animate')}
+          className={cn(
+            'relative mb-16 overflow-hidden rounded-[34px] border border-[#d9cdf9] bg-[#090611] shadow-[0_20px_70px_rgba(70,28,131,0.16)]',
+            !visible ? 'card-hidden' : 'card-animate',
+          )}
           style={{ animationDelay: '0ms' }}
+        >
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(ellipse 45% 55% at 50% 56%, rgba(143,92,255,0.26) 0%, transparent 58%), ' +
+                'radial-gradient(ellipse 34% 24% at 26% 20%, rgba(255,255,255,0.06) 0%, transparent 72%), ' +
+                'linear-gradient(180deg, rgba(10,7,19,0.94) 0%, rgba(16,10,31,0.98) 100%)',
+            }}
+          />
+
+          <div className="relative">
+            <video
+              className="relative block h-auto w-full"
+              src="/video2.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+            />
+
+            <div
+              aria-hidden
+              className="absolute inset-0"
+              style={{
+                background:
+                  'linear-gradient(180deg, rgba(9,6,17,0.18) 0%, rgba(9,6,17,0.06) 32%, rgba(9,6,17,0.30) 100%), ' +
+                  'radial-gradient(ellipse 46% 58% at 50% 52%, rgba(143,92,255,0.14) 0%, transparent 60%)',
+              }}
+            />
+
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-[#090611] to-transparent" />
+          </div>
+        </div>
+
+        <div
+          className={cn('mb-14 flex items-stretch gap-8', !visible ? 'card-hidden' : 'card-animate')}
+          style={{ animationDelay: '90ms' }}
         >
           {/* Rotated label strip — lg+ only */}
           <div
@@ -313,7 +357,7 @@ export default function Services() {
               className={cn(!mapVisible ? 'card-hidden' : 'card-animate')}
               style={{ animationDelay: '80ms' }}
             >
-              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#c4b0f2]/40 bg-[#f8f5ff] shadow-[0_4px_32px_rgba(124,58,237,0.08)]">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#bca6f2]/45 bg-[var(--card-surface-soft)] shadow-[0_4px_32px_rgba(124,58,237,0.10)]">
                 <div
                   aria-hidden
                   className="pointer-events-none absolute inset-0"

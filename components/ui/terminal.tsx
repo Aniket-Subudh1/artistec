@@ -191,13 +191,13 @@ export function Terminal({
       <div className={cn(
         "h-full overflow-hidden rounded-xl border",
         light
-          ? "border-[#c4b0f2]/50 bg-white shadow-[0_4px_24px_rgba(124,58,237,0.09)]"
+          ? "border-[#bca6f2]/50 bg-(--card-surface-soft) shadow-[0_4px_24px_rgba(124,58,237,0.11)]"
           : "border-neutral-800 bg-neutral-900 shadow-2xl",
       )}>
 
         <div className={cn(
           "flex items-center gap-2 px-4 py-3",
-          light ? "bg-[#f0ebff] border-b border-[#c4b0f2]/40" : "bg-neutral-800",
+          light ? "bg-(--card-surface) border-b border-[#bca6f2]/40" : "bg-neutral-800",
         )}>
           <div className="flex items-center gap-1.5">
             <div className="h-3 w-3 rounded-full bg-red-400"   />

@@ -26,13 +26,13 @@ const projects: Project[] = [
     name: 'PGMaster',
     tagline: 'Smart PG & hostel management platform',
     category: ['SaaS', 'React', 'PostgreSQL'],
-    year: '2024',
+    year: '2025',
     status: 'Live',
-    gradient: 'linear-gradient(140deg, #ede9ff 0%, #ddd5ff 40%, #c8bffa 100%)',
-    accentColor: '#6d4ef7',
-    textColor: '#3b2a9e',
-    chipStyle: 'bg-white/60 text-[#5b3fe0] border border-[#c5b8f8]',
-    statusStyle: 'bg-[#6d4ef7]/10 text-[#6d4ef7] border border-[#6d4ef7]/25',
+    gradient: 'linear-gradient(140deg, #1a0a3c 0%, #2d1560 42%, #3d1f7a 100%)',
+    accentColor: '#9b7fff',
+    textColor: '#e8deff',
+    chipStyle: 'bg-white/10 text-[#c4b0ff] border border-[#6d4ef7]/40',
+    statusStyle: 'bg-[#9b7fff]/15 text-[#c4b0ff] border border-[#9b7fff]/35',
     span: 'col-span-12 md:col-span-7',
     image: '/projects/PGMaster.png',
   },
@@ -41,58 +41,58 @@ const projects: Project[] = [
     name: 'Saveful',
     tagline: 'Personal finance & smart savings tracker',
     category: ['Web App', 'Next.js', 'Supabase'],
-    year: '2025',
+    year: '2026',
     status: 'Live',
-    gradient: 'linear-gradient(140deg, #faf0ff 0%, #f2e0ff 40%, #e8ccff 100%)',
-    accentColor: '#9333ea',
-    textColor: '#6b21a8',
-    chipStyle: 'bg-white/60 text-[#7e22ce] border border-[#dbb8f8]',
-    statusStyle: 'bg-[#9333ea]/10 text-[#9333ea] border border-[#9333ea]/25',
+    gradient: 'linear-gradient(140deg, #1e0438 0%, #330a5c 42%, #4a1275 100%)',
+    accentColor: '#c084fc',
+    textColor: '#f0d9ff',
+    chipStyle: 'bg-white/10 text-[#d8a8ff] border border-[#9333ea]/40',
+    statusStyle: 'bg-[#c084fc]/15 text-[#d8a8ff] border border-[#c084fc]/35',
     span: 'col-span-12 md:col-span-5',
     image: '/projects/Saveful.png',
   },
   {
-    id: 'P04',
+    id: 'P03',
     name: 'JogaadIndia',
     tagline: "India's innovation & jugaad marketplace",
     category: ['Platform', 'Next.js', 'MongoDB'],
-    year: '2024',
+    year: '2025',
     status: 'Live',
-    gradient: 'linear-gradient(140deg, #eef1ff 0%, #e0e5ff 40%, #d0d6ff 100%)',
-    accentColor: '#4f5edb',
-    textColor: '#2d3a99',
-    chipStyle: 'bg-white/60 text-[#3a47c2] border border-[#c2c9f5]',
-    statusStyle: 'bg-[#4f5edb]/10 text-[#4f5edb] border border-[#4f5edb]/25',
+    gradient: 'linear-gradient(140deg, #080e30 0%, #111d52 42%, #1a2870 100%)',
+    accentColor: '#818cf8',
+    textColor: '#dde2ff',
+    chipStyle: 'bg-white/10 text-[#a5adff] border border-[#4f5edb]/40',
+    statusStyle: 'bg-[#818cf8]/15 text-[#a5adff] border border-[#818cf8]/35',
     span: 'col-span-12 md:col-span-4',
     image: '/projects/JogaadIndia.png',
   },
   {
-    id: '05',
+    id: 'P04',
     name: 'GT Tech',
     tagline: 'Industry 4.0 solutions for digital transformation',
     category: ['Web App', 'Next.js', 'AWS'],
-    year: '2024',
+    year: '2025',
     status: 'Live',
-    gradient: 'linear-gradient(140deg, #f5ebff 0%, #ead8ff 40%, #dcc1ff 100%)',
-    accentColor: '#8b2fc9',
-    textColor: '#5b1e8a',
-    chipStyle: 'bg-white/60 text-[#7a1fb8] border border-[#d4a8f5]',
-    statusStyle: 'bg-[#8b2fc9]/10 text-[#8b2fc9] border border-[#8b2fc9]/25',
+    gradient: 'linear-gradient(140deg, #1a0330 0%, #2e0852 42%, #420d6e 100%)',
+    accentColor: '#b46ef5',
+    textColor: '#edd9ff',
+    chipStyle: 'bg-white/10 text-[#cc9ef8] border border-[#8b2fc9]/40',
+    statusStyle: 'bg-[#b46ef5]/15 text-[#cc9ef8] border border-[#b46ef5]/35',
     span: 'col-span-12 md:col-span-4',
     image: '/projects/gttech.png',
   },
   {
-    id: '06',
+    id: 'P05',
     name: 'QwikTest',
     tagline: 'Online examination and assessment platform',
     category: ['SaaS', 'React', 'MongoDB'],
-    year: '2024',
+    year: '2026',
     status: 'Live',
-    gradient: 'linear-gradient(140deg, #f0edff 0%, #e5dfff 40%, #d8d0ff 100%)',
-    accentColor: '#7c5cf0',
-    textColor: '#4c34b0',
-    chipStyle: 'bg-white/60 text-[#6441e0] border border-[#c8bef8]',
-    statusStyle: 'bg-[#7c5cf0]/10 text-[#7c5cf0] border border-[#7c5cf0]/25',
+    gradient: 'linear-gradient(140deg, #0f0728 0%, #1f1250 42%, #2e1c6e 100%)',
+    accentColor: '#a78bfa',
+    textColor: '#e6dcff',
+    chipStyle: 'bg-white/10 text-[#c0adff] border border-[#7c5cf0]/40',
+    statusStyle: 'bg-[#a78bfa]/15 text-[#c0adff] border border-[#a78bfa]/35',
     span: 'col-span-12 md:col-span-4',
     image: '/projects/qwiktest.png',
   },
@@ -198,7 +198,11 @@ function ProjectCard({
           </div>
 
           {/* Left: content */}
-          <div className="flex flex-1 flex-col justify-between p-6 lg:max-w-[55%] lg:p-8 xl:p-10">
+          <div className="relative flex flex-1 flex-col justify-between p-6 lg:max-w-[55%] lg:p-8 xl:p-10">
+            {/* Watermark */}
+            <div className="pointer-events-none absolute right-4 bottom-10 font-black leading-none select-none" aria-hidden
+              style={{ fontSize: 'clamp(55px, 7vw, 88px)', color: project.accentColor, opacity: hovered ? 0.10 : 0.05, transition: 'opacity 0.5s ease', letterSpacing: '-0.05em' }}
+            >{project.id}</div>
             {/* Top row */}
             <div className="flex items-start justify-between gap-4">
               <div className="flex flex-wrap gap-1.5">
@@ -309,6 +313,7 @@ function ProjectCard({
                 style={{ fontSize: 'clamp(55px, 7vw, 88px)', color: project.accentColor, opacity: hovered ? 0.10 : 0.05, transition: 'opacity 0.5s ease', letterSpacing: '-0.05em' }}
               >{project.id}</div>
 
+              <span className="text-[11px] font-semibold tracking-[0.18em] uppercase" style={{ color: project.accentColor + '99' }}>{project.id}</span>
               <h3 className="font-bold leading-none tracking-[-0.04em]" style={{ fontSize: 'clamp(1.4rem, 2.5vw, 1.85rem)', color: project.textColor }}>
                 {project.name}
               </h3>

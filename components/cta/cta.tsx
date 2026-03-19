@@ -110,9 +110,9 @@ export default function CTA() {
           className={cn(!visible ? 'card-hidden' : 'card-animate')}
           style={{ animationDelay: '150ms' }}
         >
-          <div className="relative h-100 w-full overflow-hidden rounded-2xl border border-[#c4b0f2]/40 bg-linear-to-br from-[#ede8ff] via-[#f0ebff] to-[#f5f2ff] shadow-[0_1px_3px_rgba(139,92,246,0.06),0_8px_32px_rgba(139,92,246,0.10)]">
+          <div className="relative h-100 w-full overflow-hidden rounded-2xl border border-[#bca6f2]/45 bg-linear-to-br from-[var(--card-surface)] via-[var(--card-surface-strong)] to-[var(--card-surface-soft)] shadow-[0_1px_3px_rgba(139,92,246,0.07),0_8px_32px_rgba(139,92,246,0.12)]">
 
-            <div className="pointer-events-none absolute inset-0 z-20 bg-linear-to-r from-[#ede8ff] via-[#ede8ff]/70 via-35% to-transparent" />
+            <div className="pointer-events-none absolute inset-0 z-20 bg-linear-to-r from-[var(--card-surface)] via-[var(--card-surface)]/75 via-35% to-transparent" />
 
             <div className="relative z-30 flex h-full flex-col justify-center p-8 md:p-14">
               <p className="mb-3 text-[10px] font-semibold uppercase tracking-[0.32em] text-[#7c3aed]/60">

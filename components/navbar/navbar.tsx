@@ -6,6 +6,12 @@ import Image from 'next/image'
 
 const navLinks = ['About Us', 'Services', 'Case Studies']
 
+const glassPanelClass =
+  'border border-white/55 bg-white/48 backdrop-blur-2xl backdrop-saturate-150 shadow-[0_20px_50px_rgba(124,99,173,0.12),inset_0_1px_0_rgba(255,255,255,0.7)]'
+
+const glassButtonClass =
+  'border border-white/60 bg-white/52 backdrop-blur-xl backdrop-saturate-150 shadow-[0_12px_28px_rgba(124,99,173,0.10),inset_0_1px_0_rgba(255,255,255,0.72)]'
+
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -33,11 +39,11 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 hidden lg:flex items-stretch h-[72px]
+        className={`fixed top-0 left-0 right-0 z-50 hidden lg:flex items-stretch h-18
                     transition-all duration-700 ease-out
                     ${mounted ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
       >
-        <div className="flex items-center gap-3 pl-5 pr-6 border-b border-r border-[#e0d9f0] bg-white shrink-0">
+        <div className={`flex items-center gap-3 pl-5 pr-6 border-b border-r border-[#e0d9f0]/70 shrink-0 ${glassPanelClass}`}>
           <Link href="/" className="flex items-center gap-2.5">
             <div className="w-9 h-9 rounded-full overflow-hidden border border-[#e0d4f5] shadow-[0_4px_12px_rgba(156,126,204,0.18)]">
               <Image src="/logo.png" width={36} height={36} alt="Artistec logo" className="w-full h-full object-cover" />
@@ -47,8 +53,8 @@ const Navbar = () => {
         
         </div>
 
-        <div className="flex-1 flex items-center justify-center border-b border-[#e0d9f0] bg-white">
-          <div className="inline-flex items-center gap-1 rounded-full border border-[#e4daf5] bg-white/95 p-1 shadow-[0_8px_24px_rgba(145,104,206,0.10)]">
+        <div className={`flex-1 flex items-center justify-center border-b border-[#e0d9f0]/70 ${glassPanelClass}`}>
+          <div className="inline-flex items-center gap-1 rounded-full border border-white/65 bg-white/40 p-1 backdrop-blur-xl backdrop-saturate-150 shadow-[0_10px_26px_rgba(145,104,206,0.12),inset_0_1px_0_rgba(255,255,255,0.7)]">
             {navLinks.map((item, index) => (
               <Link
                 key={item}
@@ -56,7 +62,7 @@ const Navbar = () => {
                 className={`rounded-full px-5 py-2 text-[12px] font-medium transition-all duration-200 ${
                   index === 1
                     ? 'bg-[#17131f] text-white shadow-[0_6px_16px_rgba(23,19,31,0.18)]'
-                    : 'text-[#4d445d] hover:bg-[#f3eeff]'
+                    : 'text-[#4d445d] hover:bg-white/45'
                 }`}
               >
                 {item}
@@ -65,11 +71,11 @@ const Navbar = () => {
           </div>
         </div>
 
-        <div className="flex items-center gap-2 px-5 border-b border-l border-[#e0d9f0] bg-white shrink-0">
+        <div className={`flex items-center gap-2 px-5 border-b border-l border-[#e0d9f0]/70 shrink-0 ${glassPanelClass}`}>
         
           <Link
             href="#"
-            className="flex items-center gap-2 rounded-full border border-[#e0d9f0] bg-white pl-4 pr-2 py-2 text-[12px] font-medium text-[#17131f] shadow-[0_2px_8px_rgba(0,0,0,0.05)] hover:bg-[#f8f4ff] transition-colors"
+            className={`flex items-center gap-2 rounded-full pl-4 pr-2 py-2 text-[12px] font-medium text-[#17131f] transition-colors hover:bg-white/60 ${glassButtonClass}`}
           >
             Connect
             <span className="flex items-center justify-center w-6 h-6 rounded-full bg-[#17131f] text-white text-[10px]">→</span>
@@ -78,8 +84,8 @@ const Navbar = () => {
       </nav>
 
       <nav
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between lg:hidden h-[60px] px-4
-                    border-b border-[#e0d9f0] bg-white
+        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between lg:hidden h-15 px-4
+                    border-b border-[#e0d9f0]/70 ${glassPanelClass}
                     transition-all duration-700 ease-out
                     ${mounted ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
       >
@@ -91,14 +97,14 @@ const Navbar = () => {
         </Link>
 
         <button
-          className="flex items-center justify-center w-8 h-8 rounded-full border border-[#e0d9f0] bg-white"
+          className={`flex items-center justify-center w-8 h-8 rounded-full ${glassButtonClass}`}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle menu"
         >
           <div className="w-4 h-3 relative flex flex-col justify-between">
-            <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-[5px]' : ''}`} />
+            <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-1.25' : ''}`} />
             <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-200 ${menuOpen ? 'opacity-0 scale-x-0' : 'opacity-100'}`} />
-            <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-[5px]' : ''}`} />
+            <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-1.25' : ''}`} />
           </div>
         </button>
       </nav>
@@ -108,7 +114,7 @@ const Navbar = () => {
                     ${menuOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'}`}
       >
         <div className="absolute inset-0 backdrop-blur-2xl bg-white/90" />
-        <div className="relative z-10 flex min-h-dvh flex-col px-8 pt-[80px] pb-24">
+        <div className="relative z-10 flex min-h-dvh flex-col px-8 pt-20 pb-24">
           <div className="flex-1 flex flex-col justify-center gap-1">
             {navLinks.map((item, i) => (
               <Link

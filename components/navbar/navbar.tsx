@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import ConnectButton from '@/components/ui/connect-button'
+import { AnimatePresence } from 'framer-motion';
 
 const navLinks = ['About Us', 'Services', 'Case Studies']
 
@@ -46,10 +47,10 @@ const Navbar = () => {
       >
         <div className={`flex items-center gap-3 pl-5 pr-6 border-b border-r border-[#e0d9f0]/70 shrink-0 ${glassPanelClass}`}>
           <Link href="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 rounded-full overflow-hidden border border-[#e0d4f5] shadow-[0_4px_12px_rgba(156,126,204,0.18)]">
+            <div className="w-9 h-9  overflow-hidden  shadow-[0_4px_12px_rgba(156,126,204,0.18)]">
               <Image src="/logo.png" width={36} height={36} alt="Artistec logo" className="w-full h-full object-cover" />
             </div>
-            <span className="text-[#17131f] font-bold text-[15px] tracking-[-0.01em]">Artistec</span>
+            <span className="text-[#17131f] font-bold text-[15px] tracking-[-0.01em]">ARTISTEC</span>
           </Link>
         
         </div>
@@ -84,10 +85,10 @@ const Navbar = () => {
                     ${mounted ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0'}`}
       >
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-full overflow-hidden border border-[#e0d4f5]">
+          <div className="w-10 h-10">
             <Image src="/logo.png" width={32} height={32} alt="Artistec logo" className="w-full h-full object-cover" />
           </div>
-          <span className="text-[#17131f] font-bold text-[14px] tracking-[-0.01em]">Artistec</span>
+          <span className="text-[#17131f] font-bold text-[14px] tracking-[-0.01em]">ARTISTEC</span>
         </Link>
 
         <button

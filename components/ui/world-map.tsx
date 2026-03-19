@@ -17,8 +17,8 @@ export function WorldMap({ dots = [], lineColor = "#6b6fd4" }: MapProps) {
   const map = new DottedMap({ height: 100, grid: "diagonal" });
 
   const svgMap = map.getSVG({
-    radius: 0.22,
-    color: "#00000018",
+    radius: 0.30,
+    color: "#8a88a8",
     shape: "circle",
     backgroundColor: "transparent",
   });
@@ -62,6 +62,9 @@ export function WorldMap({ dots = [], lineColor = "#6b6fd4" }: MapProps) {
             <stop offset="95%" stopColor={lineColor} stopOpacity="1" />
             <stop offset="100%" stopColor="white" stopOpacity="0" />
           </linearGradient>
+          <filter id="point-glow" x="-100%" y="-100%" width="300%" height="300%">
+            <feDropShadow dx="0" dy="0" stdDeviation="1.6" floodColor={lineColor} floodOpacity="0.5" />
+          </filter>
         </defs>
 
         {dots.map((dot, i) => {
@@ -87,35 +90,41 @@ export function WorldMap({ dots = [], lineColor = "#6b6fd4" }: MapProps) {
             <circle
               cx={projectPoint(dot.start.lat, dot.start.lng).x}
               cy={projectPoint(dot.start.lat, dot.start.lng).y}
-              r="2.5"
+              r="4"
               fill={lineColor}
+              stroke="white"
+              strokeWidth="1.5"
+              filter="url(#point-glow)"
             />
             <circle
               cx={projectPoint(dot.start.lat, dot.start.lng).x}
               cy={projectPoint(dot.start.lat, dot.start.lng).y}
-              r="2.5"
+              r="4"
               fill={lineColor}
-              opacity="0.4"
+              opacity="0.55"
             >
-              <animate attributeName="r" from="2.5" to="9" dur="2s" begin="0s" repeatCount="indefinite" />
-              <animate attributeName="opacity" from="0.4" to="0" dur="2s" begin="0s" repeatCount="indefinite" />
+              <animate attributeName="r" from="4" to="13" dur="2.2s" begin="0s" repeatCount="indefinite" />
+              <animate attributeName="opacity" from="0.55" to="0" dur="2.2s" begin="0s" repeatCount="indefinite" />
             </circle>
 
             <circle
               cx={projectPoint(dot.end.lat, dot.end.lng).x}
               cy={projectPoint(dot.end.lat, dot.end.lng).y}
-              r="2.5"
+              r="4"
               fill={lineColor}
+              stroke="white"
+              strokeWidth="1.5"
+              filter="url(#point-glow)"
             />
             <circle
               cx={projectPoint(dot.end.lat, dot.end.lng).x}
               cy={projectPoint(dot.end.lat, dot.end.lng).y}
-              r="2.5"
+              r="4"
               fill={lineColor}
-              opacity="0.4"
+              opacity="0.55"
             >
-              <animate attributeName="r" from="2.5" to="9" dur="2s" begin="0.5s" repeatCount="indefinite" />
-              <animate attributeName="opacity" from="0.4" to="0" dur="2s" begin="0.5s" repeatCount="indefinite" />
+              <animate attributeName="r" from="4" to="13" dur="2.2s" begin="0.5s" repeatCount="indefinite" />
+              <animate attributeName="opacity" from="0.55" to="0" dur="2.2s" begin="0.5s" repeatCount="indefinite" />
             </circle>
           </g>
         ))}

@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Artistech | Custom Software & Web Apps",
-  description: "Artistech builds custom software, web apps, and mobile applications tailored to your vision.",
+  title: "Artistec | Custom Software & Web Apps",
+  description: "Artistec builds custom software, web apps, and mobile applications tailored to your vision.",
 };
 
 export default function RootLayout({

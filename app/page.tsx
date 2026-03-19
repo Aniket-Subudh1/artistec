@@ -1,5 +1,9 @@
 import Hero from '@/components/hero/hero'
 import Services from '@/components/services/services'
+import Projects from '@/components/projects/projects'
+import Testimonials from '@/components/testimonials/testimonials'
+import CTA from '@/components/cta/cta'
+import Footer from '@/components/footer/footer'
 import React from 'react'
 
 const page = () => {
@@ -7,6 +11,10 @@ const page = () => {
     <>
       <Hero />
       <Services />
+      <Projects />
+      <Testimonials />
+      <CTA />
+      <Footer />
     </>
   )
 }

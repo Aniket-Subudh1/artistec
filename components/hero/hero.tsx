@@ -272,17 +272,14 @@ const Hero = () => {
                 Design and development for modern websites, mobile apps,
                 <br />and digital platforms that need to launch cleanly and grow fast.
               </p>
-              <div className="mt-5 relative h-[96px] overflow-hidden object-center justify-center items-center rounded-[18px] bg-[#181321] shadow-[0_14px_26px_rgba(24,19,33,0.16)]">
-                <video
-                  className="absolute inset-0 h-full w-full object-cover opacity-80"
-                  src="/video.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
+              <div className="mt-5 relative h-24 overflow-hidden rounded-[18px] bg-[#181321] shadow-[0_14px_26px_rgba(24,19,33,0.16)]">
+                <Image
+                  src="/image.png"
+                  alt="Websites and apps"
+                  fill
+                  className="object-cover opacity-90"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(128,75,217,0.34),rgba(15,10,25,0.44))]" />
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(128,75,217,0.28),rgba(15,10,25,0.38))]" />
               </div>
             </div>
             <div className="rounded-[30px] border border-[#efe8f8] -mt-20 ml-30 -mr-30 bg-white px-6 py-5 shadow-[0_20px_44px_rgba(156,126,204,0.08)]">
@@ -290,17 +287,14 @@ const Hero = () => {
               <p className="mt-3 text-center text-[11px] leading-[1.75] text-[#7d748d]">
                 AI content, CRM integration, automation, robotics, and drone solutions tailored to how your business actually operates.
               </p>
-              <div className="mt-5 relative h-[96px] overflow-hidden object-center justify-center items-center rounded-[18px] bg-[#181321] shadow-[0_14px_26px_rgba(24,19,33,0.16)]">
-                <video
-                  className="absolute inset-0 h-full w-full object-cover opacity-80"
-                  src="/video.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="metadata"
+              <div className="mt-5 relative h-24 overflow-hidden rounded-[18px] bg-[#181321] shadow-[0_14px_26px_rgba(24,19,33,0.16)]">
+                <Image
+                  src="/image1.png"
+                  alt="AI automation and smart systems"
+                  fill
+                  className="object-cover opacity-90"
                 />
-                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(128,75,217,0.34),rgba(15,10,25,0.44))]" />
+                <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(128,75,217,0.28),rgba(15,10,25,0.38))]" />
               </div>
             </div>
 
@@ -419,15 +413,7 @@ const Hero = () => {
                   Design and development for modern websites, mobile apps, and digital platforms that need to launch cleanly and grow fast.
                 </p>
                 <div className="mt-4 relative h-40 overflow-hidden rounded-[16px] bg-[#181321]">
-                  <video
-                    className="absolute inset-0 h-full w-full object-cover opacity-80"
-                    src="/video.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    preload="metadata"
-                  />
+                  <Image src="/image.png" alt="Websites and apps" fill className="object-cover opacity-90" />
                   <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(128,75,217,0.34),rgba(15,10,25,0.44))]" />
                 </div>
               </div>
@@ -438,15 +424,7 @@ const Hero = () => {
                     AI content, CRM integration, automation, robotics, and drone solutions tailored to how your business actually operates.
                   </p>
                   <div className="mt-4 relative h-40 overflow-hidden rounded-[16px] bg-[#181321]">
-                    <video
-                      className="absolute inset-0 h-full w-full object-cover opacity-80"
-                      src="/video.mp4"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      preload="metadata"
-                    />
+                    <Image src="/image1.png" alt="AI automation and smart systems" fill className="object-cover opacity-90" />
                     <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(128,75,217,0.34),rgba(15,10,25,0.44))]" />
                   </div>
                 </div>

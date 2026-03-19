@@ -1,20 +1,24 @@
-﻿'use client';
+'use client';
 import React, { useRef, useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { WorldMap } from '@/components/ui/world-map';
+import { BlurVignette, BlurVignetteArticle } from '@/components/ui/blur-vignette';
 import Lottie from 'lottie-react';
 import webAnim from '@/public/animation/web.json';
 import aiAnim from '@/public/animation/ai.json';
 import crmAnim from '@/public/animation/crm.json';
 import droneAnim from '@/public/animation/drone.json';
-import { ArrowRight } from 'lucide-react';
+
 import { ScrambleText } from '@/components/ui/scramble-text';
+import { Terminal } from '@/components/ui/terminal';
 
 const services = [
   {
     animationData: webAnim,
     title: 'Website & Mobile App Development',
     description: 'Professional website and mobile application development for Android & iOS, covering UI/UX design, deployment, and modernisation of digital platforms.',
+    tag: 'Development',
+    index: '01',
     className: 'col-span-3 lg:col-span-2',
     lottieClass: 'scale-110',
   },
@@ -22,6 +26,8 @@ const services = [
     animationData: aiAnim,
     title: 'AI-Powered Content',
     description: 'Generate AI-powered, UX-focused, and SEO-friendly content tailored for your digital product — effortless, effective, and conversion-ready.',
+    tag: 'Artificial Intelligence',
+    index: '02',
     className: 'col-span-3 lg:col-span-1',
     lottieClass: '',
   },
@@ -29,6 +35,8 @@ const services = [
     animationData: crmAnim,
     title: 'AI, Automation & CRM',
     description: 'AI-powered chatbots, intelligent automation, cybersecurity, and CRM integration for existing websites, apps, and business operations.',
+    tag: 'Automation',
+    index: '03',
     className: 'col-span-3 lg:col-span-1',
     lottieClass: '',
   },
@@ -36,6 +44,8 @@ const services = [
     animationData: droneAnim,
     title: 'Robotics, Drones & Smart Systems',
     description: 'Development and deployment of robotics, humanoid, and drone technologies — ready-made or fully customised systems based on client requirements.',
+    tag: 'Hardware',
+    index: '04',
     className: 'col-span-3 lg:col-span-2',
     lottieClass: 'scale-110',
   },
@@ -52,6 +62,8 @@ function BentoCard({
   animationData,
   title,
   description,
+  tag,
+  index,
   className,
   lottieClass,
   delay = 0,
@@ -60,6 +72,8 @@ function BentoCard({
   animationData: object;
   title: string;
   description: string;
+  tag: string;
+  index: string;
   className?: string;
   lottieClass?: string;
   delay?: number;
@@ -68,85 +82,52 @@ function BentoCard({
   return (
     <div
       className={cn(
-        'group relative col-span-3 flex flex-col justify-end overflow-hidden rounded-2xl',
-        'border border-[#ede9f8] bg-white',
-        '[box-shadow:0_0_0_1px_rgba(167,139,250,0.05),0_2px_6px_rgba(107,111,212,0.04),0_12px_28px_rgba(107,111,212,0.06)]',
-        'transition-all duration-500 ease-out',
-        'hover:scale-[1.012] hover:border-[#d7c8fb] hover:[box-shadow:0_0_0_1px_rgba(215,200,251,0.4),0_12px_40px_rgba(167,139,250,0.22)]',
+        'group col-span-3',
         !visible ? 'card-hidden' : 'card-animate',
         className,
       )}
       style={{ animationDelay: `${delay}ms` }}
     >
-      {/* Shimmer line at top — slides on hover */}
-      <div
-        aria-hidden
-        className="absolute inset-x-0 top-0 z-30 h-0.5 origin-left scale-x-0 rounded-full bg-linear-to-r from-[#d7c8fb] via-[#a78bfa] to-transparent transition-transform duration-700 ease-out group-hover:scale-x-100"
-      />
-
-      {/* Lottie animation — absolutely fills top portion */}
-      <div className="absolute inset-x-0 top-0 h-[58%] overflow-hidden">
-        <div
-          className="h-full w-full transition-transform duration-700 ease-out group-hover:scale-105"
-          style={{
-            maskImage: 'linear-gradient(to bottom, #000 40%, transparent 100%)',
-            WebkitMaskImage: 'linear-gradient(to bottom, #000 40%, transparent 100%)',
-          }}
-        >
+      <BlurVignette
+        radius="22px"
+        inset="80px"
+        transitionLength="160px"
+        blur="18px"
+        classname={cn(
+          'aspect-auto w-full transition-all duration-500 ease-out',
+          'border border-[#ece8fb] shadow-[0_1px_3px_rgba(139,92,246,0.04),0_6px_24px_rgba(139,92,246,0.07)]',
+          'hover:-translate-y-1 hover:shadow-[0_4px_12px_rgba(139,92,246,0.08),0_20px_48px_rgba(139,92,246,0.13)] hover:border-[#d9cefc]',
+        )}
+        style={{ height: '22rem' } as React.CSSProperties}
+      >
+        <div className="h-full w-full bg-[#ede8ff] transition-transform duration-700 ease-out group-hover:scale-[1.03]">
           <Lottie
             animationData={animationData}
             loop
             autoplay
-            className={cn('h-full w-full', lottieClass)}
+            className={cn('h-full w-full opacity-90', lottieClass)}
           />
         </div>
-      </div>
 
-      {/* Gradient bridge */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-0 z-10"
-        style={{
-          top: '38%',
-          bottom: 0,
-          background: 'linear-gradient(to bottom, transparent 0%, rgba(255,255,255,0.94) 18%, #ffffff 40%)',
-        }}
-      />
-
-      {/* Card content */}
-      <div className="relative z-20 p-5 sm:p-6">
-        {/* Accent line */}
-        <div className="mb-3 h-px w-10 rounded-full bg-[#d7c8fb] transition-all duration-500 group-hover:w-16 group-hover:bg-[#a78bfa]" />
-
-        <div className="flex flex-col gap-1.5 transition-all duration-300 ease-out group-hover:-translate-y-7">
-          <h3 className="text-[15px] font-semibold leading-snug tracking-[-0.025em] text-gray-900">
-            {title}
-          </h3>
-          <p className="text-[12.5px] leading-[1.85] text-gray-500">
-            {description}
-          </p>
-        </div>
-
-        {/* CTA — revealed on hover */}
-        <div
-          className={cn(
-            'pointer-events-none absolute bottom-5 left-5 flex translate-y-3 items-center gap-1.5 opacity-0',
-            'transition-all duration-300 ease-out group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto',
-          )}
-        >
-          <span className="text-[12px] font-semibold tracking-wide text-[#7c3aed]">Learn more</span>
-          <ArrowRight className="h-3.5 w-3.5 text-[#7c3aed] transition-transform duration-200 group-hover:translate-x-1" />
-        </div>
-      </div>
-
-      {/* Hover glow overlay */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        style={{
-          background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(215,200,251,0.16) 0%, transparent 70%)',
-        }}
-      />
+        <BlurVignetteArticle classname="h-[36%] w-[calc(100%-1rem)] ml-2 mt-auto mb-2">
+          <div className="flex h-full flex-col justify-start gap-1.5 rounded-[14px] border border-[#c4b0f2]/30 bg-[#7c3aed]/20 px-4 pb-4 pt-3">
+            <div className="flex items-center justify-between">
+              <span className="text-[9px] font-semibold uppercase tracking-[0.28em] text-[#6d28d9]/70">
+                {tag}
+              </span>
+              <span className="text-[11px] font-light tracking-widest text-[#a78bfa]/60">
+                {index}
+              </span>
+            </div>
+            <h3 className="text-[14px] font-semibold leading-snug tracking-[-0.02em] text-[#2e1065]">
+              {title}
+            </h3>
+            <p className="line-clamp-2 text-[11.5px] leading-[1.8] text-[#4c1d95]/70">
+              {description}
+            </p>
+          </div>
+        </BlurVignetteArticle>
+      </BlurVignette>
     </div>
   );
 }
@@ -185,35 +166,64 @@ export default function Services() {
       <div className="relative z-10 mx-auto max-w-7xl px-5 py-24 sm:px-8 md:px-12 lg:px-16 xl:px-24">
 
         <div
-          className={cn('mb-14 flex flex-col items-center text-center gap-4', !visible ? 'card-hidden' : 'card-animate')}
+          className={cn('mb-14 flex items-stretch gap-8', !visible ? 'card-hidden' : 'card-animate')}
           style={{ animationDelay: '0ms' }}
         >
-          <div className="flex items-center gap-3 fade-up-sm" style={{ animationDelay: '0ms', animationFillMode: 'both' }}>
-            <span className="h-px w-8 bg-gray-300" />
-            <span className="text-[10px] font-medium uppercase tracking-[0.34em] text-gray-400">What We Do</span>
-            <span className="h-px w-8 bg-gray-300" />
+          {/* Rotated label strip — lg+ only */}
+          <div
+            className="hidden lg:flex shrink-0 flex-col items-center"
+            style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.5s 0.1s' }}
+          >
+            <div className="w-px flex-1 bg-linear-to-b from-transparent to-gray-200" />
+            <span
+              className="shrink-0 py-3 text-[9px] font-semibold uppercase tracking-[0.28em] text-gray-400"
+              style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+            >
+              What We Do
+            </span>
+            <div className="h-6 w-px bg-gray-200" />
           </div>
-          <h2
-            className="max-w-3xl text-[2rem] font-semibold leading-[1.06] tracking-[-0.04em] text-gray-900 sm:text-[2.6rem] md:text-[3.2rem] blur-in"
-            style={{ animationDelay: '0.1s', animationFillMode: 'both', opacity: visible ? undefined : 0 }}
-          >
-            {visible ? (
-              <>
-                <ScrambleText text="Full-spectrum solutions" delay={150} duration={900} trigger={visible} />{' '}
-                <span className="text-[#d7c8fb]/92">
-                  <ScrambleText text="for the next era." delay={500} duration={800} trigger={visible} />
-                </span>
-              </>
-            ) : (
-              <>Full-spectrum solutions <span className="text-[#d7c8fb]/92">for the next era.</span></>
-            )}
-          </h2>
-          <p
-            className="max-w-xl text-[14px] leading-[1.85] text-gray-500 blur-in"
-            style={{ animationDelay: '0.55s', animationFillMode: 'both', opacity: visible ? undefined : 0 }}
-          >
-            From intelligent software and AI automation to physical-world robotics and smart systems — we design, build, and deliver across every technical domain Artistech operates in.
-          </p>
+
+          <div className="flex flex-1 flex-col">
+            <div
+              className="mb-7 flex items-center gap-4 fade-up-sm"
+              style={{ animationDelay: '0ms', animationFillMode: 'both' }}
+            >
+              <span className="text-[9px] font-semibold uppercase tracking-[0.3em] text-gray-400 lg:hidden">
+                What We Do
+              </span>
+              <div className="h-px flex-1 bg-gray-200" />
+              <span className="shrink-0 text-[11px] font-light tracking-widest text-[#c4b0f2]">01</span>
+            </div>
+
+            <h2
+              className="mb-4 text-[2rem] font-semibold leading-[1.06] tracking-[-0.04em] text-gray-900 sm:text-[2.6rem] md:text-[3.2rem] blur-in"
+              style={{ animationDelay: '0.1s', animationFillMode: 'both', opacity: visible ? undefined : 0 }}
+            >
+              {visible ? (
+                <>
+                  <ScrambleText text="Full-spectrum solutions" delay={150} duration={900} trigger={visible} />{' '}
+                  <span className="text-[#d7c8fb]/92">
+                    <ScrambleText text="for the next era." delay={500} duration={800} trigger={visible} />
+                  </span>
+                </>
+              ) : (
+                <>Full-spectrum solutions <span className="text-[#d7c8fb]/92">for the next era.</span></>
+              )}
+            </h2>
+
+            <p
+              className="max-w-md text-[14px] leading-[1.85] text-gray-500 blur-in"
+              style={{ animationDelay: '0.55s', animationFillMode: 'both', opacity: visible ? undefined : 0 }}
+            >
+              From intelligent software and AI automation to physical-world robotics and smart systems — we design, build, and deliver across every technical domain Artistec operates in.
+            </p>
+
+            <div
+              className="mt-9 h-px bg-gray-200"
+              style={{ opacity: visible ? 1 : 0, transition: 'opacity 0.5s 0.6s' }}
+            />
+          </div>
         </div>
 
         <div
@@ -226,6 +236,8 @@ export default function Services() {
               animationData={s.animationData}
               title={s.title}
               description={s.description}
+              tag={s.tag}
+              index={s.index}
               className={s.className}
               lottieClass={s.lottieClass}
               delay={i * 90}
@@ -236,44 +248,147 @@ export default function Services() {
 
         <div ref={mapRef} className="mt-24">
           <div
-            className={cn('mb-10 flex flex-col items-center text-center gap-3', !mapVisible ? 'card-hidden' : 'card-animate')}
+            className={cn('mb-10 flex items-stretch gap-8', !mapVisible ? 'card-hidden' : 'card-animate')}
             style={{ animationDelay: '0ms' }}
           >
-            <div className="flex items-center gap-3 fade-up-sm" style={{ animationFillMode: 'both' }}>
-              <span className="h-px w-8 bg-gray-300" />
-              <span className="text-[10px] font-medium uppercase tracking-[0.34em] text-gray-400">Global Reach</span>
-              <span className="h-px w-8 bg-gray-300" />
+            <div
+              className="hidden lg:flex shrink-0 flex-col items-center"
+              style={{ opacity: mapVisible ? 1 : 0, transition: 'opacity 0.5s 0.1s' }}
+            >
+              <div className="w-px flex-1 bg-linear-to-b from-transparent to-gray-200" />
+              <span
+                className="shrink-0 py-3 text-[9px] font-semibold uppercase tracking-[0.28em] text-gray-400"
+                style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+              >
+                Global Reach
+              </span>
+              <div className="h-6 w-px bg-gray-200" />
             </div>
-            <h3
-              className="text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.035em] text-gray-900 sm:text-[2.2rem] blur-in"
-              style={{ animationDelay: '0.1s', animationFillMode: 'both', opacity: mapVisible ? undefined : 0 }}
-            >
-              {mapVisible ? (
-                <>
-                  <ScrambleText text="Headquartered in Kuwait." delay={100} duration={800} trigger={mapVisible} />{' '}
-                  <span className="text-[#d7c8fb]/92">
-                    <ScrambleText text="Operating globally." delay={500} duration={700} trigger={mapVisible} />
-                  </span>
-                </>
-              ) : (
-                <>Headquartered in Kuwait. <span className="text-[#d7c8fb]/92">Operating globally.</span></>
-              )}
-            </h3>
-            <p
-              className="max-w-lg text-[14px] leading-[1.85] text-gray-500 blur-in"
-              style={{ animationDelay: '0.5s', animationFillMode: 'both', opacity: mapVisible ? undefined : 0 }}
-            >
-              Our network of trusted partners spans the Middle East, South Asia, Europe, and North America — delivering to the same standard wherever you are.
-            </p>
+
+            {/* Content */}
+            <div className="flex flex-1 flex-col">
+              <div
+                className="mb-7 flex items-center gap-4 fade-up-sm"
+                style={{ animationFillMode: 'both' }}
+              >
+                <span className="text-[9px] font-semibold uppercase tracking-[0.3em] text-gray-400 lg:hidden">
+                  Global Reach
+                </span>
+                <div className="h-px flex-1 bg-gray-200" />
+                <span className="shrink-0 text-[11px] font-light tracking-widest text-[#c4b0f2]">02</span>
+              </div>
+
+              <h3
+                className="mb-4 text-[1.75rem] font-semibold leading-[1.08] tracking-[-0.035em] text-gray-900 sm:text-[2.2rem] blur-in"
+                style={{ animationDelay: '0.1s', animationFillMode: 'both', opacity: mapVisible ? undefined : 0 }}
+              >
+                {mapVisible ? (
+                  <>
+                    <ScrambleText text="Headquartered in Kuwait." delay={100} duration={800} trigger={mapVisible} />{' '}
+                    <span className="text-[#d7c8fb]/92">
+                      <ScrambleText text="Operating globally." delay={500} duration={700} trigger={mapVisible} />
+                    </span>
+                  </>
+                ) : (
+                  <>Headquartered in Kuwait. <span className="text-[#d7c8fb]/92">Operating globally.</span></>
+                )}
+              </h3>
+
+              <p
+                className="max-w-lg text-[14px] leading-[1.85] text-gray-500 blur-in"
+                style={{ animationDelay: '0.5s', animationFillMode: 'both', opacity: mapVisible ? undefined : 0 }}
+              >
+                Our network of trusted partners spans the Middle East, South Asia, Europe, and North America — delivering to the same standard wherever you are.
+              </p>
+
+              <div
+                className="mt-8 h-px bg-gray-200"
+                style={{ opacity: mapVisible ? 1 : 0, transition: 'opacity 0.5s 0.6s' }}
+              />
+            </div>
           </div>
 
-          <div
-            className={cn(!mapVisible ? 'card-hidden' : 'card-animate')}
-            style={{ animationDelay: '80ms' }}
-          >
-            <div className="rounded-2xl border border-[#e8eaf6] bg-[#fafafa] p-4 sm:p-5 shadow-[0_2px_20px_0_rgba(107,111,212,0.06)]">
-              <WorldMap dots={mapDots} lineColor="#6b6fd4" />
+          <div className="grid grid-cols-1 gap-5 lg:grid-cols-2">
+            <div
+              className={cn(!mapVisible ? 'card-hidden' : 'card-animate')}
+              style={{ animationDelay: '80ms' }}
+            >
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#c4b0f2]/40 bg-[#f8f5ff] shadow-[0_4px_32px_rgba(124,58,237,0.08)]">
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0"
+                  style={{ background: 'radial-gradient(ellipse 90% 55% at 50% 110%, rgba(124,58,237,0.12) 0%, transparent 60%)' }}
+                />
+
+                <div className="relative flex items-center gap-5 border-b border-[#c4b0f2]/30 px-5 py-4">
+                  {(['4+', '20+', '50+'] as const).map((val, i) => (
+                    <React.Fragment key={val}>
+                      {i > 0 && <div className="h-6 w-px bg-[#c4b0f2]/40" />}
+                      <div>
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#6d28d9]/50">
+                          {['Regions', 'Partners', 'Projects'][i]}
+                        </p>
+                        <p className="mt-0.5 text-[1.4rem] font-semibold leading-none tracking-tight text-[#2e1065]">{val}</p>
+                      </div>
+                    </React.Fragment>
+                  ))}
+                  <div className="ml-auto flex gap-1.5">
+                    {(['#c084fc', '#a78bfa', '#7c3aed', '#6d28d9'] as const).map(c => (
+                      <div key={c} className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: c }} />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="relative flex-1 px-3 py-1">
+                  <WorldMap dots={mapDots} lineColor="#7c3aed" />
+                </div>
+
+                <div className="relative border-t border-[#c4b0f2]/25 px-5 py-2.5">
+                  <span className="text-[9px] font-semibold uppercase tracking-[0.26em] text-[#6d28d9]/40">
+                    Middle East · South Asia · Europe · North America
+                  </span>
+                </div>
+              </div>
             </div>
+
+            <div
+              className={cn(!mapVisible ? 'card-hidden' : 'card-animate')}
+              style={{ animationDelay: '180ms' }}
+            >
+              <Terminal
+                theme="light"
+                username="artistec"
+                commands={[
+                  'artistec deploy --project skybridge --env prod',
+                  'npm run build',
+                  'artistec status --all',
+                  'artistec logs --service api --tail 20',
+                ]}
+                outputs={{
+                  0: [
+                    '✔  Compiling 47 modules…',
+                    '✔  Bundle optimised. 184 kB gzipped.',
+                    '✔  Deployed to edge — Kuwait / EU-West / US-East.',
+                    '✔  SSL certificate renewed. Live → skybridge.io',
+                  ],
+                  1: ['✓  Compiled successfully in 3.2s.'],
+                  2: [
+                    'skybridge.io   ● online   99.98% uptime',
+                    'neura-crm.io   ● online   99.95% uptime',
+                    'voxai.app      ● online   100.0% uptime',
+                  ],
+                  3: [
+                    '[12:04:31]  GET /api/health  →  200  18ms',
+                    '[12:04:33]  POST /api/query  →  200  42ms',
+                    '[12:04:35]  Health check passed. All systems nominal.',
+                  ],
+                }}
+                typingSpeed={38}
+                delayBetweenCommands={900}
+                className="h-full"
+              />
+            </div>
+
           </div>
         </div>
 

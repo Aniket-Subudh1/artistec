@@ -3,10 +3,16 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import ConnectButton from '@/components/ui/connect-button'
-import { AnimatePresence } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
-const navLinks = ['About Us', 'Services', 'Case Studies']
+const navLinks = [
+  { label: 'Home', href: '/' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Contact', href: '/contact' },
+]
 
 const glassPanelClass =
   'border border-white/55 bg-white/48 backdrop-blur-2xl backdrop-saturate-150 shadow-[0_20px_50px_rgba(124,99,173,0.12),inset_0_1px_0_rgba(255,255,255,0.7)]'
@@ -15,6 +21,7 @@ const glassButtonClass =
   'border border-white/60 bg-white/52 backdrop-blur-xl backdrop-saturate-150 shadow-[0_12px_28px_rgba(124,99,173,0.10),inset_0_1px_0_rgba(255,255,255,0.72)]'
 
 const Navbar = () => {
+  const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
 
@@ -57,24 +64,34 @@ const Navbar = () => {
 
         <div className={`flex-1 flex items-center justify-center border-b border-[#e0d9f0]/70 ${glassPanelClass}`}>
           <div className="inline-flex items-center gap-1 rounded-full border border-white/65 bg-white/40 p-1 backdrop-blur-xl backdrop-saturate-150 shadow-[0_10px_26px_rgba(145,104,206,0.12),inset_0_1px_0_rgba(255,255,255,0.7)]">
-            {navLinks.map((item, index) => (
-              <Link
-                key={item}
-                href="#"
-                className={`rounded-full px-5 py-2 text-[12px] font-medium transition-all duration-200 ${
-                  index === 1
-                    ? 'bg-[#17131f] text-white shadow-[0_6px_16px_rgba(23,19,31,0.18)]'
-                    : 'text-[#4d445d] hover:bg-white/45'
-                }`}
-              >
-                {item}
-              </Link>
-            ))}
+            {navLinks.map(({ label, href }) => {
+              const isActive = href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href)
+              return (
+                <Link
+                  key={label}
+                  href={href}
+                  className="relative rounded-full px-5 py-2 text-[12px] font-medium"
+                >
+                  {isActive && (
+                    <motion.span
+                      layoutId="nav-pill"
+                      className="absolute inset-0 rounded-full bg-[#17131f] shadow-[0_6px_16px_rgba(23,19,31,0.20)]"
+                      transition={{ type: 'spring', bounce: 0.18, duration: 0.45 }}
+                    />
+                  )}
+                  <span className={`relative z-10 transition-colors duration-200 ${
+                    isActive ? 'text-white' : 'text-[#4d445d] hover:text-[#17131f]'
+                  }`}>
+                    {label}
+                  </span>
+                </Link>
+              )
+            })}
           </div>
         </div>
 
         <div className={`flex items-center gap-2 px-5 border-b border-l border-[#e0d9f0]/70 shrink-0 ${glassPanelClass}`}>
-          <ConnectButton />
+          <ConnectButton href="/contact" />
         </div>
       </nav>
 
@@ -111,25 +128,30 @@ const Navbar = () => {
         <div className="absolute inset-0 backdrop-blur-2xl bg-white/90" />
         <div className="relative z-10 flex min-h-dvh flex-col px-8 pt-20 pb-24">
           <div className="flex-1 flex flex-col justify-center gap-1">
-            {navLinks.map((item, i) => (
-              <Link
-                key={item}
-                href="#"
-                onClick={closeMenu}
-                className={`group flex items-center justify-between py-5 border-b border-[#e8e2f4] last:border-b-0
-                            transition-all duration-500 ease-out
-                            ${menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
-                style={{ transitionDelay: menuOpen ? `${100 + i * 60}ms` : '0ms' }}
-              >
-                <span className="text-[#17131f] text-[1.8rem] font-bold tracking-[-0.03em]">{item}</span>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-[#8890c4]">
-                  <path d="M5 12h14M12 5l7 7-7 7" />
-                </svg>
-              </Link>
-            ))}
+            {navLinks.map(({ label, href }, i) => {
+              const isActive = href === '/' ? pathname === '/' : pathname === href || pathname.startsWith(href)
+              return (
+                <Link
+                  key={label}
+                  href={href}
+                  onClick={closeMenu}
+                  className={`group flex items-center justify-between py-5 border-b border-[#e8e2f4] last:border-b-0
+                              transition-all duration-500 ease-out
+                              ${menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
+                  style={{ transitionDelay: menuOpen ? `${100 + i * 60}ms` : '0ms' }}
+                >
+                  <span className={`text-[1.8rem] font-bold tracking-[-0.03em] transition-colors duration-200 ${
+                    isActive ? 'text-[#7c3aed]' : 'text-[#17131f]'
+                  }`}>{label}</span>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className={isActive ? 'text-[#7c3aed]' : 'text-[#8890c4]'}>
+                    <path d="M5 12h14M12 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              )
+            })}
           </div>
           <div className="mt-auto flex justify-center">
-            <Link href="#" className="flex items-center gap-2 rounded-full bg-[#17131f] text-white px-6 py-3 text-[13px] font-medium">
+            <Link href="/contact" className="flex items-center gap-2 rounded-full bg-[#17131f] text-white px-6 py-3 text-[13px] font-medium">
               Connect <span>→</span>
             </Link>
           </div>

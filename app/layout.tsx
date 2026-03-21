@@ -14,8 +14,84 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Artistec | Custom Software & Web Apps",
-  description: "Artistec builds custom software, web apps, and mobile applications tailored to your vision.",
+  metadataBase: new URL("https://artistec.co"),
+  title: {
+    default: "Artistec — Custom Software, Web & AI Studio",
+    template: "%s | Artistec",
+  },
+  description:
+    "Artistec builds custom software, web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and governments worldwide.",
+  keywords: [
+    "custom software development",
+    "web app development",
+    "mobile app development",
+    "AI systems",
+    "robotics",
+    "startup studio",
+    "Artistec",
+  ],
+  authors: [{ name: "Artistec", url: "https://artistec.co" }],
+  creator: "Artistec",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  openGraph: {
+    title: "Artistec — Custom Software, Web & AI Studio",
+    description:
+      "Artistec builds custom software, web apps, mobile platforms, AI systems, and robotics — tailored to your vision.",
+    url: "https://artistec.co",
+    siteName: "Artistec",
+    images: [
+      {
+        url: "/seo.png",
+        width: 1200,
+        height: 630,
+        alt: "Artistec — Custom Software & AI Studio",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Artistec — Custom Software, Web & AI Studio",
+    description:
+      "Artistec builds custom software, web apps, mobile platforms, AI systems, and robotics — tailored to your vision.",
+    images: ["/seo.png"],
+  },
+  alternates: {
+    canonical: "https://artistec.co",
+  },
+};
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Artistec",
+  url: "https://artistec.co",
+  logo: "https://artistec.co/seo.png",
+  description:
+    "Artistec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and governments across the globe.",
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "customer service",
+    url: "https://artistec.co/contact",
+  },
+};
+
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Artistec",
+  url: "https://artistec.co",
 };
 
 export default function RootLayout({
@@ -28,6 +104,14 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.cdnfonts.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://fonts.cdnfonts.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

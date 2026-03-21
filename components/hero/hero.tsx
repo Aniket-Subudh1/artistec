@@ -260,7 +260,7 @@ const Hero = () => {
               </div>
 
               <div className="absolute bottom-[14px] left-[54%] z-4 -translate-x-1/2">
-                <ConnectButton />
+                <ConnectButton href="/contact" />
               </div>
             </div>
           </div>
@@ -402,7 +402,7 @@ const Hero = () => {
                 From websites and mobile apps to AI-powered content, CRM workflows, robotics, and drone solutions, we create technology that is practical, scalable, and built around your business goals.
               </p>
               <div className="mt-5">
-                <ConnectButton className="w-fit" />
+                <ConnectButton href="/contact" className="w-fit" />
               </div>
             </div>
 

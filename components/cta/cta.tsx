@@ -132,7 +132,7 @@ export default function CTA() {
               </p>
 
               <div className="mt-7">
-                <LiquidButton label="Start Your Project" href="#contact" />
+                <LiquidButton label="Start Your Project" href="/contact" />
               </div>
 
               <div className="mt-8 flex flex-wrap items-center gap-0 divide-x divide-[#c4b0f2]/40">

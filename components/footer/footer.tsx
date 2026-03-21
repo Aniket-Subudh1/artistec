@@ -4,12 +4,12 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 const footerLinks = [
-  { label: 'About Us', href: '#' },
-  { label: 'Services', href: '#' },
-  { label: 'Case Studies', href: '#' },
-  { label: 'Contact Us', href: '#' },
-  { label: 'Privacy Policy', href: '#' },
-  { label: 'Terms & Conditions', href: '#' },
+  { label: 'About Us', href: '/about' },
+  { label: 'Services', href: '/services' },
+  { label: 'Startup', href: '/startup' },
+  { label: 'Contact Us', href: '/contact' },
+  { label: 'Privacy Policy', href: '/privacy-policy' },
+  { label: 'Terms & Conditions', href: '/terms' },
 ];
 
 const socialLinks = [

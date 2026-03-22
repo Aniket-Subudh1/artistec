@@ -43,6 +43,10 @@ const Navbar = () => {
     }
   }, [menuOpen])
 
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [pathname])
+
   const closeMenu = useCallback(() => setMenuOpen(false), [])
 
   return (
@@ -151,7 +155,7 @@ const Navbar = () => {
             })}
           </div>
           <div className="mt-auto flex justify-center">
-            <Link href="/contact" className="flex items-center gap-2 rounded-full bg-[#17131f] text-white px-6 py-3 text-[13px] font-medium">
+            <Link href="/contact" onClick={closeMenu} className="flex items-center gap-2 rounded-full bg-[#17131f] text-white px-6 py-3 text-[13px] font-medium">
               Connect <span>→</span>
             </Link>
           </div>

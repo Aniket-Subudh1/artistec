@@ -7,7 +7,8 @@ import Lottie from 'lottie-react';
 import webAnim from '@/public/animation/web.json';
 import aiAnim from '@/public/animation/ai.json';
 import crmAnim from '@/public/animation/crm.json';
-import droneAnim from '@/public/animation/robot.json';
+import robotAnim from '@/public/animation/robot.json';
+import droneAnim from '@/public/animation/drone.json';
 
 import { ScrambleText } from '@/components/ui/scramble-text';
 import { Terminal } from '@/components/ui/terminal';
@@ -41,7 +42,7 @@ const services = [
     lottieClass: '',
   },
   {
-    animationData: droneAnim,
+    animationData: [robotAnim, droneAnim],
     title: 'Robotics, Drones & Smart Systems',
     description: 'Development and deployment of robotics, humanoid, and drone technologies — ready-made or fully customised systems based on client requirements.',
     tag: 'Hardware',
@@ -70,7 +71,7 @@ function BentoCard({
   delay = 0,
   visible,
 }: {
-  animationData: object;
+  animationData: object | object[];
   title: string;
   description: string;
   tag: string;
@@ -80,6 +81,8 @@ function BentoCard({
   delay?: number;
   visible: boolean;
 }) {
+  const animations = Array.isArray(animationData) ? animationData : [animationData];
+
   return (
     <div
       className={cn(
@@ -95,19 +98,49 @@ function BentoCard({
         transitionLength="160px"
         blur="18px"
         classname={cn(
-          'aspect-auto w-full transition-all duration-500 ease-out',
+          'aspect-auto w-full bg-linear-to-br from-(--card-surface) via-(--card-surface-strong) to-(--card-surface-soft) transition-all duration-500 ease-out',
           'border border-[#ece8fb] shadow-[0_1px_3px_rgba(139,92,246,0.04),0_6px_24px_rgba(139,92,246,0.07)]',
           'hover:-translate-y-1 hover:shadow-[0_4px_12px_rgba(139,92,246,0.08),0_20px_48px_rgba(139,92,246,0.13)] hover:border-[#d9cefc]',
         )}
         style={{ height: '22rem' } as React.CSSProperties}
       >
-        <div className="h-full w-full bg-[var(--card-surface)] transition-transform duration-700 ease-out group-hover:scale-[1.03]">
-          <Lottie
-            animationData={animationData}
-            loop
-            autoplay
-            className={cn('h-full w-full opacity-90', lottieClass)}
-          />
+        <div
+          className={cn(
+            'w-full overflow-hidden bg-(--card-surface) transition-transform duration-700 ease-out group-hover:scale-[1.03]',
+            animations.length > 1 ? 'h-[64%]' : 'h-full',
+          )}
+        >
+          <div
+            className={cn(
+              'h-full w-full',
+              animations.length > 1
+                ? 'grid grid-cols-2 gap-0'
+                : 'block',
+            )}
+          >
+            {animations.map((animation, animationIndex) => (
+              <div
+                key={`${title}-${animationIndex}`}
+                className={cn(
+                  'min-h-0',
+                  animations.length > 1
+                    ? 'flex h-full items-center justify-center border-r border-[#ece8fb]/70 last:border-r-0 px-1.5 sm:px-3'
+                    : 'h-full w-full',
+                )}
+              >
+                <Lottie
+                  animationData={animation}
+                  loop
+                  autoplay
+                  className={cn(
+                    'opacity-90',
+                    animations.length > 1 ? 'h-full w-full scale-[0.82] sm:scale-[0.94]' : 'h-full w-full',
+                    lottieClass,
+                  )}
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         <BlurVignetteArticle classname="h-[36%] w-[calc(100%-1rem)] ml-2 mt-auto mb-2">
@@ -357,7 +390,7 @@ export default function Services() {
               className={cn(!mapVisible ? 'card-hidden' : 'card-animate')}
               style={{ animationDelay: '80ms' }}
             >
-              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#bca6f2]/45 bg-[var(--card-surface-soft)] shadow-[0_4px_32px_rgba(124,58,237,0.10)]">
+              <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-[#bca6f2]/45 bg-(--card-surface-soft) shadow-[0_4px_32px_rgba(124,58,237,0.10)]">
                 <div
                   aria-hidden
                   className="pointer-events-none absolute inset-0"

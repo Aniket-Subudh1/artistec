@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import ConnectButton from '@/components/ui/connect-button'
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion'
 
 const navLinks = [
   { label: 'Home', href: '/' },
@@ -23,14 +23,17 @@ const glassButtonClass =
 const Navbar = () => {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
+  const [menuPathname, setMenuPathname] = useState<string | null>(null)
   const [mounted, setMounted] = useState(false)
+
+  const isMenuOpen = menuOpen && menuPathname === pathname
 
   useEffect(() => {
     requestAnimationFrame(() => setMounted(true))
   }, [])
 
   useEffect(() => {
-    if (menuOpen) {
+    if (isMenuOpen) {
       document.documentElement.style.overflowY = 'hidden'
       document.body.style.overflowY = 'hidden'
     } else {
@@ -41,13 +44,24 @@ const Navbar = () => {
       document.documentElement.style.overflowY = ''
       document.body.style.overflowY = ''
     }
-  }, [menuOpen])
+  }, [isMenuOpen])
 
-  useEffect(() => {
+  const closeMenu = useCallback(() => {
     setMenuOpen(false)
-  }, [pathname])
+    setMenuPathname(null)
+  }, [])
 
-  const closeMenu = useCallback(() => setMenuOpen(false), [])
+  const toggleMenu = useCallback(() => {
+    setMenuOpen((current) => {
+      if (current && menuPathname === pathname) {
+        setMenuPathname(null)
+        return false
+      }
+
+      setMenuPathname(pathname)
+      return true
+    })
+  }, [menuPathname, pathname])
 
   return (
     <>
@@ -59,7 +73,7 @@ const Navbar = () => {
         <div className={`flex items-center gap-3 pl-5 pr-6 border-b border-r border-[#e0d9f0]/70 shrink-0 ${glassPanelClass}`}>
           <Link href="/" className="flex items-center gap-2.5">
             <div className="w-12 h-10  overflow-hidden  shadow-[0_4px_12px_rgba(156,126,204,0.18)]">
-              <Image src="/logo.png" width={1060} height={1060} alt="Artistec logo" className="w-full h-full object-full" />
+              <Image src="/logo.png" width={1060} height={1060} alt="Artistec logo" className="w-full h-full object-contain" />
             </div>
             <span className="text-[#17131f] font-bold text-[15px] tracking-[-0.01em]">ARTISTEC</span>
           </Link>
@@ -114,20 +128,20 @@ const Navbar = () => {
 
         <button
           className={`flex items-center justify-center w-8 h-8 rounded-full ${glassButtonClass}`}
-          onClick={() => setMenuOpen(!menuOpen)}
+          onClick={toggleMenu}
           aria-label="Toggle menu"
         >
           <div className="w-4 h-3 relative flex flex-col justify-between">
-            <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-300 origin-center ${menuOpen ? 'rotate-45 translate-y-1.25' : ''}`} />
-            <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-200 ${menuOpen ? 'opacity-0 scale-x-0' : 'opacity-100'}`} />
-            <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-300 origin-center ${menuOpen ? '-rotate-45 -translate-y-1.25' : ''}`} />
+            <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-300 origin-center ${isMenuOpen ? 'rotate-45 translate-y-1.25' : ''}`} />
+            <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-200 ${isMenuOpen ? 'opacity-0 scale-x-0' : 'opacity-100'}`} />
+            <span className={`block h-[1.5px] bg-[#17131f] rounded-full transition-all duration-300 origin-center ${isMenuOpen ? '-rotate-45 -translate-y-1.25' : ''}`} />
           </div>
         </button>
       </nav>
 
       <div
         className={`fixed inset-0 z-40 overflow-y-auto lg:hidden transition-all duration-500 ease-in-out
-                    ${menuOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'}`}
+                    ${isMenuOpen ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'}`}
       >
         <div className="absolute inset-0 backdrop-blur-2xl bg-white/90" />
         <div className="relative z-10 flex min-h-dvh flex-col px-8 pt-20 pb-24">
@@ -141,8 +155,8 @@ const Navbar = () => {
                   onClick={closeMenu}
                   className={`group flex items-center justify-between py-5 border-b border-[#e8e2f4] last:border-b-0
                               transition-all duration-500 ease-out
-                              ${menuOpen ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
-                  style={{ transitionDelay: menuOpen ? `${100 + i * 60}ms` : '0ms' }}
+                              ${isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-6 opacity-0'}`}
+                  style={{ transitionDelay: isMenuOpen ? `${100 + i * 60}ms` : '0ms' }}
                 >
                   <span className={`text-[1.8rem] font-bold tracking-[-0.03em] transition-colors duration-200 ${
                     isActive ? 'text-[#7c3aed]' : 'text-[#17131f]'

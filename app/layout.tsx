@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s | Artistec",
   },
   description:
-    "Artistec builds custom software, web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and governments worldwide.",
+    "Artistec builds custom software, web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams worldwide.",
   keywords: [
     "custom software development",
     "web app development",
@@ -79,7 +79,7 @@ const organizationSchema = {
   url: "https://artistec.co",
   logo: "https://artistec.co/seo.png",
   description:
-    "Artistec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and governments across the globe.",
+    "Artistec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams across the globe.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",

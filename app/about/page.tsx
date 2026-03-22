@@ -202,7 +202,7 @@ export default function AboutPage() {
             <p className="max-w-md text-[14px] leading-[1.9] text-gray-500">
               Artistec is a full-spectrum product studio — engineering web apps,
               mobile platforms, AI systems, and robotics for startups, enterprises,
-              and governments across the globe.
+              and ambitious teams across the globe.
             </p>
             <div className="flex items-center gap-2.5 text-[9px] font-semibold uppercase tracking-[0.32em] text-gray-400">
               <span>Scroll</span>

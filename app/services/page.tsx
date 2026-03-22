@@ -6,7 +6,6 @@ import Footer from '@/components/footer/footer'
 import { cn } from '@/lib/utils'
 import { ArrowUpRight, Check, Layers, Sparkles, Zap, Cpu, TrendingUp, Shield, Users, Award } from 'lucide-react'
 
-/* ─── useVisible hook ──────────────────────────────────────────── */
 function useVisible(threshold = 0.08): [React.RefObject<HTMLDivElement | null>, boolean] {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
@@ -21,7 +20,6 @@ function useVisible(threshold = 0.08): [React.RefObject<HTMLDivElement | null>, 
   return [ref, visible]
 }
 
-/* ─── Data ─────────────────────────────────────────────────────── */
 const services = [
   {
     index: '01',
@@ -89,7 +87,7 @@ const services = [
     description:
       'We design and deploy humanoid robotics, autonomous drone systems, and custom smart hardware for industrial, logistics, security, and commercial use cases. Our hardware team operates at the intersection of firmware engineering, computer vision, and real-world deployment — from prototype to production.',
     deliverables: [
-      'Custom drone and UAV system design',
+      'Custom drone system design',
       'Humanoid and industrial robotics integration',
       'Computer vision and sensor fusion pipelines',
       'Embedded firmware and IoT edge computing',
@@ -151,7 +149,6 @@ const expertise = [
   },
 ]
 
-/* ─── Component ────────────────────────────────────────────────── */
 export default function ServicesPage() {
   const [heroRef, heroVisible] = useVisible(0.05)
   const [servRef] = useVisible(0.05)
@@ -162,7 +159,6 @@ export default function ServicesPage() {
   return (
     <>
 
-      {/* ── HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-screen w-full overflow-hidden bg-[#fcfbff] flex flex-col">
         {/* dot-grid texture */}
         <div

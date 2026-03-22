@@ -62,7 +62,7 @@ const milestones = [
   {
     year: '2024',
     title: 'Robotics & Drones division launched',
-    desc: 'Entered hardware with custom UAV systems and humanoid robotics for industrial clients across the Gulf region.',
+    desc: 'Entered hardware with custom drone systems and humanoid robotics for industrial clients across the Gulf region.',
   },
   {
     year: '2025',

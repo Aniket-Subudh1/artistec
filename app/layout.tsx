@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://artistec.co"),
   title: {
-    default: "Artistec — Custom Software, Web & AI Studio",
+    default: "Artistec | Custom Software, Web & AI Studio",
     template: "%s | Artistec",
   },
   description:

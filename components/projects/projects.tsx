@@ -37,7 +37,7 @@ const projects: Project[] = [
     image: '/projects/PGMaster.png',
   },
   {
-    id: 'P05',
+    id: 'P02',
     name: 'Aryavart Ancient Academy',
     tagline: 'CBSE school blending modern education with Vedic values',
     category: ['Website', 'Next.js', 'UI/UX'],
@@ -52,7 +52,7 @@ const projects: Project[] = [
     image: '/projects/aaaschool.png',
   },
   {
-    id: 'P02',
+    id: 'P03',
     name: 'JogaadIndia',
     tagline: "India's innovation & jugaad marketplace",
     category: ['Platform', 'Next.js', 'MongoDB'],
@@ -67,7 +67,7 @@ const projects: Project[] = [
     image: '/projects/JogaadIndia.png',
   },
   {
-    id: 'P03',
+    id: 'P04',
     name: 'GT Tech',
     tagline: 'Industry 4.0 solutions for digital transformation',
     category: ['Web App', 'Next.js', 'AWS'],
@@ -82,7 +82,7 @@ const projects: Project[] = [
     image: '/projects/gttech.png',
   },
   {
-    id: 'P04',
+    id: 'P05',
     name: 'QwikTest',
     tagline: 'Online examination and assessment platform',
     category: ['SaaS', 'React', 'MongoDB'],

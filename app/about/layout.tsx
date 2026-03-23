@@ -3,9 +3,9 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Artistec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams across the globe.',
+    'ArtisTec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams across the globe.',
   keywords: [
-    'about Artistec',
+    'about ArtisTec',
     'software studio',
     'product agency',
     'AI development team',
@@ -15,17 +15,17 @@ export const metadata: Metadata = {
     canonical: 'https://artistec.co/about',
   },
   openGraph: {
-    title: 'About Us | Artistec',
+    title: 'About Us | ArtisTec',
     description:
-      'Artistec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams across the globe.',
+      'ArtisTec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams across the globe.',
     url: 'https://artistec.co/about',
-    siteName: 'Artistec',
+    siteName: 'ArtisTec',
     images: [
       {
         url: '/seo.png',
         width: 1200,
         height: 630,
-        alt: 'About Artistec — Custom Software & AI Studio',
+        alt: 'About ArtisTec — Custom Software & AI Studio',
       },
     ],
     locale: 'en_US',
@@ -33,9 +33,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'About Us | Artistec',
+    title: 'About Us | ArtisTec',
     description:
-      'Artistec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams across the globe.',
+      'ArtisTec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams across the globe.',
     images: ['/seo.png'],
   },
 }

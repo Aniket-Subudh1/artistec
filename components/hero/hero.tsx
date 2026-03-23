@@ -181,7 +181,7 @@ const Hero = () => {
               </svg>
 
               <div className="absolute left-6 top-8 z-3 flex h-14 w-14 items-center justify-center rounded-full border border-white/70 bg-white/84 shadow-[0_14px_30px_rgba(160,126,214,0.18)] backdrop-blur-md">
-                <Image src="/logo.png" alt="Artistec logo" width={32} height={32} className="h-8 w-8 object-contain" />
+                <Image src="/logo.png" alt="ArtisTec logo" width={32} height={32} className="h-8 w-8 object-contain" />
               </div>
 
               <div className="absolute -right-3 mt-3 z-3 flex flex-col items-end gap-2">
@@ -199,7 +199,7 @@ const Hero = () => {
                 </div>
                 <p className="text-[12px] font-medium leading-[1.7] text-white/80 blur-in" style={{ animationDelay: '0.7s', animationFillMode: 'both', opacity: 0 }}>
                   <Typewriter
-                    text="Artistec creates software, content, and intelligent systems that move ideas from concept to real-world execution."
+                    text="ArtisTec creates software, content, and intelligent systems that move ideas from concept to real-world execution."
                     delay={750}
                     speed={28}
                     cursor
@@ -225,12 +225,12 @@ const Hero = () => {
               <div className="absolute bottom-8 right-8 z-3 w-[166px] rounded-[30px] border border-white bg-white/10 px-5 py-5 text-white shadow-[0_20px_36px_rgba(110,77,179,0.16)] backdrop-blur-lg">
                 <div className="mb-4 flex justify-end">
                   <div className="flex h-10 w-10 items-center justify-center rounded-full border border-white/45 bg-white p-1.5">
-                    <Image src="/logo.png" alt="Artistec badge" width={24} height={24} className="h-6 w-6 object-contain" />
+                    <Image src="/logo.png" alt="ArtisTec badge" width={24} height={24} className="h-6 w-6 object-contain" />
                   </div>
                 </div>
                 <p className="text-right text-[0.92rem] font-medium text-white/82">Full-spectrum</p>
                 <p className="text-right text-[2.15rem] font-semibold leading-none tracking-[-0.05em]">Builds</p>
-                <p className="mt-1 text-right text-[9px] uppercase tracking-[0.22em] text-white/58">Artistec solutions</p>
+                <p className="mt-1 text-right text-[9px] uppercase tracking-[0.22em] text-white/58">ArtisTec solutions</p>
                 <div className="mt-5 flex items-end justify-between gap-2">
                   <div>
                     <p className="text-[3.5rem] font-light leading-none tracking-[-0.1em]">360</p>
@@ -252,7 +252,7 @@ const Hero = () => {
 
               <div className="absolute -bottom-0 -left-20 z-4 max-w-[540px] xl:max-w-[580px]">
                 <h1 ref={headlineRef} className="text-[4rem] font-bold leading-[0.9] tracking-[-0.04em] text-[#17131f] xl:text-[2rem]" style={{ opacity: 0 }}>
-                  <ScrambleText text="Artistec Builds" delay={250} duration={1100} />
+                  <ScrambleText text="ArtisTec Builds" delay={250} duration={1100} />
                 </h1>
                 <p className="mt-3 max-w-[460px] text-[15px] leading-[1.7] text-[#7e758f] xl:max-w-[500px] blur-in" style={{ animationDelay: '1.1s', opacity: 0, animationFillMode: 'both' }}>
                   From websites and mobile apps to AI-powered content, CRM workflows, robotics, and drone solutions, we create technology that is practical, scalable, and built around your business goals.
@@ -346,7 +346,7 @@ const Hero = () => {
               </svg>
 
               <div className="absolute left-4 top-5 z-3 flex h-11 w-11 items-center justify-center rounded-full border border-white/70 bg-white/84 shadow-[0_12px_24px_rgba(160,126,214,0.18)] backdrop-blur-md">
-                <Image src="/logo.png" alt="Artistec logo" width={26} height={26} className="h-6 w-6 object-contain" />
+                <Image src="/logo.png" alt="ArtisTec logo" width={26} height={26} className="h-6 w-6 object-contain" />
               </div>
 
               <div className="absolute right-0 top-0 z-3 flex flex-col items-end gap-1.5">
@@ -377,7 +377,7 @@ const Hero = () => {
                 className="text-[2.4rem] font-bold leading-[0.92] tracking-[-0.07em] text-[#17131f] sm:text-[3rem]"
                 style={{ opacity: 0 }}
               >
-                <ScrambleText text="Artistec Builds Software, Automation, and Smart Systems" delay={200} duration={1200} />
+                <ScrambleText text="ArtisTec Builds Software, Automation, and Smart Systems" delay={200} duration={1200} />
               </h1>
               <div ref={mobileTagsRef} className="mt-4 flex flex-wrap gap-2">
                 {floatingTags.map((tag, index) => (

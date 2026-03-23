@@ -12,25 +12,25 @@ const sections = [
     index: '01',
     title: 'Acceptance of Terms',
     body: [
-      'By accessing or using any portion of the Artistec website or engaging our services, you confirm that you have read, understood, and agree to be bound by these Terms & Conditions. If you do not agree, please discontinue use immediately.',
-      'These terms apply to all visitors, clients, and any other party who accesses or uses Artistec\'s website or services in any capacity.',
+      'By accessing or using any portion of the ArtisTec website or engaging our services, you confirm that you have read, understood, and agree to be bound by these Terms & Conditions. If you do not agree, please discontinue use immediately.',
+      'These terms apply to all visitors, clients, and any other party who accesses or uses ArtisTec\'s website or services in any capacity.',
     ],
   },
   {
     index: '02',
     title: 'Services',
     body: [
-      'Artistec provides professional digital services including, but not limited to, website and mobile application development, AI-powered content production, intelligent automation and CRM integration, and robotics & smart systems development.',
-      'The specific scope, deliverables, timeline, and pricing for any engagement are defined in a separate Statement of Work (SOW) or Service Agreement signed between Artistec and the client. In the event of any conflict between these Terms and an SOW, the SOW shall prevail.',
+      'ArtisTec provides professional digital services including, but not limited to, website and mobile application development, AI-powered content production, intelligent automation and CRM integration, and robotics & smart systems development.',
+      'The specific scope, deliverables, timeline, and pricing for any engagement are defined in a separate Statement of Work (SOW) or Service Agreement signed between ArtisTec and the client. In the event of any conflict between these Terms and an SOW, the SOW shall prevail.',
     ],
   },
   {
     index: '03',
     title: 'Client Obligations',
     body: [
-      'Clients are responsible for providing accurate, complete, and timely information, materials, and feedback required for Artistec to deliver the agreed services.',
-      'Delays caused by the client\'s failure to provide required inputs, approvals, or feedback in a timely manner may result in revised delivery timelines. Artistec will not be held liable for project delays attributable to the client.',
-      'Clients must ensure they have all necessary rights and licences for any content, trademarks, images, or data they provide to Artistec for use in a project.',
+      'Clients are responsible for providing accurate, complete, and timely information, materials, and feedback required for ArtisTec to deliver the agreed services.',
+      'Delays caused by the client\'s failure to provide required inputs, approvals, or feedback in a timely manner may result in revised delivery timelines. ArtisTec will not be held liable for project delays attributable to the client.',
+      'Clients must ensure they have all necessary rights and licences for any content, trademarks, images, or data they provide to ArtisTec for use in a project.',
     ],
   },
   {
@@ -38,7 +38,7 @@ const sections = [
     title: 'Payment Terms',
     body: [
       'Payment terms are outlined in each individual SOW or invoice. Unless otherwise agreed in writing, invoices are payable within 14 calendar days of the invoice date.',
-      'Artistec reserves the right to pause or suspend work on any project where payment is overdue by more than 14 days. Project timelines will be adjusted accordingly upon resumption.',
+      'ArtisTec reserves the right to pause or suspend work on any project where payment is overdue by more than 14 days. Project timelines will be adjusted accordingly upon resumption.',
       'All fees are exclusive of applicable taxes unless stated otherwise. Clients are responsible for any withholding taxes, VAT, or similar charges imposed by their local jurisdiction.',
     ],
   },
@@ -46,9 +46,9 @@ const sections = [
     index: '05',
     title: 'Intellectual Property',
     body: [
-      'Upon receipt of full payment for a project, Artistec assigns to the client full ownership of the custom-developed deliverables created specifically for that project, except where third-party components (open-source libraries, licensed assets, etc.) are used.',
-      'Artistec retains ownership of all pre-existing tools, frameworks, methodologies, templates, and proprietary internal systems used in delivering the project. A non-exclusive, perpetual licence to use these in the context of the delivered product is granted to the client.',
-      'Artistec reserves the right to showcase completed work in its portfolio, case studies, and marketing materials unless the client has explicitly requested confidentiality in writing.',
+      'Upon receipt of full payment for a project, ArtisTec assigns to the client full ownership of the custom-developed deliverables created specifically for that project, except where third-party components (open-source libraries, licensed assets, etc.) are used.',
+      'ArtisTec retains ownership of all pre-existing tools, frameworks, methodologies, templates, and proprietary internal systems used in delivering the project. A non-exclusive, perpetual licence to use these in the context of the delivered product is granted to the client.',
+      'ArtisTec reserves the right to showcase completed work in its portfolio, case studies, and marketing materials unless the client has explicitly requested confidentiality in writing.',
     ],
   },
   {
@@ -63,15 +63,15 @@ const sections = [
     index: '07',
     title: 'Limitation of Liability',
     body: [
-      'To the maximum extent permitted by applicable law, Artistec\'s total liability to a client in connection with any project or service shall not exceed the total fees paid by the client for that specific project in the 12 months preceding the claim.',
-      'Artistec shall not be liable for any indirect, incidental, consequential, special, or exemplary damages — including loss of revenue, data, goodwill, or business opportunity — regardless of whether Artistec was advised of the possibility of such damages.',
+      'To the maximum extent permitted by applicable law, ArtisTec\'s total liability to a client in connection with any project or service shall not exceed the total fees paid by the client for that specific project in the 12 months preceding the claim.',
+      'ArtisTec shall not be liable for any indirect, incidental, consequential, special, or exemplary damages — including loss of revenue, data, goodwill, or business opportunity — regardless of whether ArtisTec was advised of the possibility of such damages.',
     ],
   },
   {
     index: '08',
     title: 'Warranties & Disclaimer',
     body: [
-      'Artistec warrants that it will perform services with reasonable skill and care consistent with industry standards.',
+      'ArtisTec warrants that it will perform services with reasonable skill and care consistent with industry standards.',
       'Except as expressly stated above, the website and services are provided "as is" without warranties of any kind, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.',
     ],
   },
@@ -80,7 +80,7 @@ const sections = [
     title: 'Termination',
     body: [
       'Either party may terminate an engagement by providing 30 days\' written notice. In the event of termination, the client shall pay for all work completed and reasonable costs incurred up to the date of termination.',
-      'Artistec may terminate immediately and without notice if the client materially breaches these terms, fails to make payment, or engages in fraudulent or unlawful conduct.',
+      'ArtisTec may terminate immediately and without notice if the client materially breaches these terms, fails to make payment, or engages in fraudulent or unlawful conduct.',
     ],
   },
   {
@@ -95,7 +95,7 @@ const sections = [
     index: '11',
     title: 'Amendments',
     body: [
-      'Artistec reserves the right to update these Terms & Conditions at any time. The "Last Updated" date at the top of this page will reflect changes. Continued use of the website or services after any amendment constitutes acceptance of the revised terms.',
+      'ArtisTec reserves the right to update these Terms & Conditions at any time. The "Last Updated" date at the top of this page will reflect changes. Continued use of the website or services after any amendment constitutes acceptance of the revised terms.',
       'For active client engagements, material changes to terms will be communicated in writing and require mutual agreement before taking effect.',
     ],
   },
@@ -171,7 +171,7 @@ export default function TermsPage() {
           {/* intro */}
           <div className="mb-14 rounded-2xl border border-[#e0d4fb]/60 bg-[#f7f3ff] p-8">
             <p className="text-[15px] leading-[1.9] text-[#1e0a3c]/70">
-              These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern the relationship between Artistec and its clients and website visitors. Please read them carefully before engaging our services or using this website. These Terms are effective as of the date displayed above.
+              These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern the relationship between ArtisTec and its clients and website visitors. Please read them carefully before engaging our services or using this website. These Terms are effective as of the date displayed above.
             </p>
           </div>
 

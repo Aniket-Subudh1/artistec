@@ -236,7 +236,7 @@ export default function ServicesPage() {
                 )}
                 style={{ animationDelay: '0.18s', animationFillMode: 'both' }}
               >
-                Artistec operates at the intersection of software, intelligence, automation, and hardware. We don&apos;t pick one lane — we build across all four so your product has every advantage.
+                ArtisTec operates at the intersection of software, intelligence, automation, and hardware. We don&apos;t pick one lane — we build across all four so your product has every advantage.
               </p>
 
               <div
@@ -472,7 +472,7 @@ export default function ServicesPage() {
           >
             <div>
               <span className="mb-3 block text-[9px] font-semibold uppercase tracking-[0.35em] text-[#a78bfa]/60">
-                Why Artistec
+                Why ArtisTec
               </span>
               <h2 className="text-[2.2rem] font-bold leading-[1.06] tracking-[-0.04em] text-white sm:text-[3rem]">
                 Built for the bold,{' '}
@@ -678,7 +678,7 @@ export default function ServicesPage() {
               href="/about"
               className="inline-flex items-center gap-2.5 rounded-full border border-white/16 px-8 py-4 text-[14px] font-semibold text-white/70 transition-all duration-300 hover:border-white/30 hover:text-white"
             >
-              About Artistec
+              About ArtisTec
             </Link>
           </div>
         </div>

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const ribbonBase = [
-  'LAUNCH', 'MVP', 'ARTISTEC', 'SPRINT', 'BUILD', 'SHIP', 'STARTUP', 'GROW',
+  'LAUNCH', 'MVP', 'ArtisTec', 'SPRINT', 'BUILD', 'SHIP', 'STARTUP', 'GROW',
 ].reduce<string[]>((acc, s) => [...acc, s, '\u2736'], [])
 const ribbonItems = [...ribbonBase, ...ribbonBase]
 
@@ -101,9 +101,9 @@ export default function StartupPage() {
         <div className="relative z-10 flex flex-1 flex-col px-6 py-5 md:py-7 xl:px-8">
           <Link href="/" className="flex items-center gap-2 self-start group">
             <div className="w-7 h-7 overflow-hidden rounded-md ring-1 ring-[#a78bfa]/20 transition group-hover:ring-[#a78bfa]/50">
-              <Image src="/logo.png" width={28} height={28} alt="Artistec" className="w-full h-full object-cover" />
+              <Image src="/logo.png" width={28} height={28} alt="ArtisTec" className="w-full h-full object-cover" />
             </div>
-            <span className="text-[12px] font-bold tracking-[0.04em]" style={{ color: 'rgba(255,255,255,0.90)' }}>ARTISTEC</span>
+            <span className="text-[12px] font-bold tracking-[0.04em]" style={{ color: 'rgba(255,255,255,0.90)' }}>ArtisTec</span>
             <span className="h-1.5 w-1.5 rounded-full bg-[#a78bfa] opacity-80" />
           </Link>
 

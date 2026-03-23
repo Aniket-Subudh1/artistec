@@ -73,9 +73,9 @@ const Navbar = () => {
         <div className={`flex items-center gap-3 pl-5 pr-6 border-b border-r border-[#e0d9f0]/70 shrink-0 ${glassPanelClass}`}>
           <Link href="/" className="flex items-center gap-2.5">
             <div className="w-12 h-10  overflow-hidden  shadow-[0_4px_12px_rgba(156,126,204,0.18)]">
-              <Image src="/logo.png" width={1060} height={1060} alt="Artistec logo" className="w-full h-full object-contain" />
+              <Image src="/logo.png" width={1060} height={1060} alt="ArtisTec logo" className="w-full h-full object-contain" />
             </div>
-            <span className="text-[#17131f] font-bold text-[15px] tracking-[-0.01em]">ARTISTEC</span>
+            <span className="text-[#17131f] font-bold text-[15px] tracking-[-0.01em]">ArtisTec</span>
           </Link>
         
         </div>
@@ -121,9 +121,9 @@ const Navbar = () => {
       >
         <Link href="/" className="flex items-center gap-2">
           <div className="w-9 h-8">
-            <Image src="/logo.png" width={360} height={360} alt="Artistec logo" className="w-full h-full object-cover" />
+            <Image src="/logo.png" width={360} height={360} alt="ArtisTec logo" className="w-full h-full object-cover" />
           </div>
-          <span className="text-[#17131f] font-bold text-[14px] tracking-[-0.01em]">ARTISTEC</span>
+          <span className="text-[#17131f] font-bold text-[14px] tracking-[-0.01em]">ArtisTec</span>
         </Link>
 
         <button

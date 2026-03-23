@@ -429,7 +429,7 @@ export default function Projects() {
               style={{ animationDelay: '0.55s', animationFillMode: 'both', opacity: visible ? undefined : 0 }}
             >
               From AI platforms to aerospace systems - every project we take on becomes a benchmark.
-              A curated selection of products shipped under the Artistec umbrella.
+              A curated selection of products shipped under the ArtisTec umbrella.
             </p>
 
             <div

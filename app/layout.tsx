@@ -16,11 +16,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://artistec.co"),
   title: {
-    default: "Artistec | Custom Software, Web & AI Studio",
-    template: "%s | Artistec",
+    default: "ArtisTec | Custom Software, Web & AI Studio",
+    template: "%s | ArtisTec",
   },
   description:
-    "Artistec builds custom software, web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams worldwide.",
+    "ArtisTec builds custom software, web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams worldwide.",
   keywords: [
     "custom software development",
     "web app development",
@@ -28,10 +28,10 @@ export const metadata: Metadata = {
     "AI systems",
     "robotics",
     "startup studio",
-    "Artistec",
+    "ArtisTec",
   ],
-  authors: [{ name: "Artistec", url: "https://artistec.co" }],
-  creator: "Artistec",
+  authors: [{ name: "ArtisTec", url: "https://artistec.co" }],
+  creator: "ArtisTec",
   robots: {
     index: true,
     follow: true,
@@ -44,17 +44,17 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Artistec — Custom Software, Web & AI Studio",
+    title: "ArtisTec — Custom Software, Web & AI Studio",
     description:
-      "Artistec builds custom software, web apps, mobile platforms, AI systems, and robotics — tailored to your vision.",
+      "ArtisTec builds custom software, web apps, mobile platforms, AI systems, and robotics — tailored to your vision.",
     url: "https://artistec.co",
-    siteName: "Artistec",
+    siteName: "ArtisTec",
     images: [
       {
         url: "/seo.png",
         width: 1200,
         height: 630,
-        alt: "Artistec — Custom Software & AI Studio",
+        alt: "ArtisTec — Custom Software & AI Studio",
       },
     ],
     locale: "en_US",
@@ -62,9 +62,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Artistec — Custom Software, Web & AI Studio",
+    title: "ArtisTec — Custom Software, Web & AI Studio",
     description:
-      "Artistec builds custom software, web apps, mobile platforms, AI systems, and robotics — tailored to your vision.",
+      "ArtisTec builds custom software, web apps, mobile platforms, AI systems, and robotics — tailored to your vision.",
     images: ["/seo.png"],
   },
   alternates: {
@@ -75,11 +75,11 @@ export const metadata: Metadata = {
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Artistec",
+  name: "ArtisTec",
   url: "https://artistec.co",
   logo: "https://artistec.co/seo.png",
   description:
-    "Artistec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams across the globe.",
+    "ArtisTec is a full-spectrum product studio — engineering web apps, mobile platforms, AI systems, and robotics for startups, enterprises, and ambitious teams across the globe.",
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "customer service",
@@ -90,7 +90,7 @@ const organizationSchema = {
 const websiteSchema = {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  name: "Artistec",
+  name: "ArtisTec",
   url: "https://artistec.co",
 };
 

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   description:
     "Tell us about your project. We'll get back within 24 hours with a tailored proposal, timeline, and pricing.",
   keywords: [
-    'contact Artistec',
+    'contact ArtisTec',
     'book a call',
     'software project inquiry',
     'hire software studio',
@@ -15,17 +15,17 @@ export const metadata: Metadata = {
     canonical: 'https://artistec.co/contact',
   },
   openGraph: {
-    title: 'Book a Strategy Call | Artistec',
+    title: 'Book a Strategy Call | ArtisTec',
     description:
       "Tell us about your project. We'll get back within 24 hours with a tailored proposal, timeline, and pricing.",
     url: 'https://artistec.co/contact',
-    siteName: 'Artistec',
+    siteName: 'ArtisTec',
     images: [
       {
         url: '/seo.png',
         width: 1200,
         height: 630,
-        alt: 'Contact Artistec — Book a Strategy Call',
+        alt: 'Contact ArtisTec — Book a Strategy Call',
       },
     ],
     locale: 'en_US',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Book a Strategy Call | Artistec',
+    title: 'Book a Strategy Call | ArtisTec',
     description:
       "Tell us about your project. We'll get back within 24 hours with a tailored proposal, timeline, and pricing.",
     images: ['/seo.png'],

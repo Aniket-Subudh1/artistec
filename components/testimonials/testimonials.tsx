@@ -9,7 +9,7 @@ const reviews = [
     name: 'Sarah Mitchell',
     role: 'CTO',
     company: 'VantageAI',
-    body: "Artistec delivered our AI platform ahead of schedule. The quality of work and attention to detail is unmatched — our system now handles 10x the load we projected.",
+    body: "ArtisTec delivered our AI platform ahead of schedule. The quality of work and attention to detail is unmatched — our system now handles 10x the load we projected.",
     initials: 'SM',
     color: '#7c3aed',
   },
@@ -49,7 +49,7 @@ const reviews = [
     name: 'David Park',
     role: 'CEO',
     company: 'NeuraScale',
-    body: "We've worked with many dev agencies. Artistec is in a different league — technically brilliant, always on time, and they truly understand product vision.",
+    body: "We've worked with many dev agencies. ArtisTec is in a different league — technically brilliant, always on time, and they truly understand product vision.",
     initials: 'DP',
     color: '#4c1d95',
   },
@@ -65,7 +65,7 @@ const reviews = [
     name: 'Tom Nakamura',
     role: 'VP Product',
     company: 'Axiom Labs',
-    body: "Artistec rebuilt our legacy platform in four months. Migration was seamless, the new UI is night and day, and performance improved by an order of magnitude.",
+    body: "ArtisTec rebuilt our legacy platform in four months. Migration was seamless, the new UI is night and day, and performance improved by an order of magnitude.",
     initials: 'TN',
     color: '#9333ea',
   },
@@ -207,7 +207,7 @@ export default function Testimonials() {
               className="max-w-md text-[14px] leading-[1.85] text-gray-500 blur-in"
               style={{ animationDelay: '0.55s', animationFillMode: 'both', opacity: visible ? undefined : 0 }}
             >
-              Real results from real clients — from AI-powered platforms to robotics systems. Here&apos;s what teams say about working with Artistec.
+              Real results from real clients — from AI-powered platforms to robotics systems. Here&apos;s what teams say about working with ArtisTec.
             </p>
 
             <div

@@ -86,7 +86,7 @@ export interface TerminalProps {
 export function Terminal({
   commands = ["npx shadcn@latest init"],
   outputs = {},
-  username = "artistec",
+  username = "ArtisTec",
   className,
   typingSpeed = 50,
   delayBetweenCommands = 800,

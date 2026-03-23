@@ -132,7 +132,7 @@ export default function AboutPage() {
             className="select-none text-[22vw] font-bold leading-none tracking-[-0.06em] text-[#7c3aed]/3"
             style={{ whiteSpace: 'nowrap' }}
           >
-            ARTISTEC
+            ArtisTec
           </span>
         </div>
 
@@ -170,7 +170,7 @@ export default function AboutPage() {
           >
             <div className="h-px w-8 bg-[#c4b0f2]" />
             <span className="text-[9px] font-semibold uppercase tracking-[0.42em] text-[#7c3aed]/60">
-              About Artistec
+              About ArtisTec
             </span>
           </div>
 
@@ -200,7 +200,7 @@ export default function AboutPage() {
             style={{ animationDelay: '220ms' }}
           >
             <p className="max-w-md text-[14px] leading-[1.9] text-gray-500">
-              Artistec is a full-spectrum product studio — engineering web apps,
+              ArtisTec is a full-spectrum product studio — engineering web apps,
               mobile platforms, AI systems, and robotics for startups, enterprises,
               and ambitious teams across the globe.
             </p>
@@ -276,7 +276,7 @@ export default function AboutPage() {
             )}
             style={{ animationDelay: '200ms' }}
           >
-            &mdash;&nbsp;Artistec &nbsp;&middot;&nbsp; Since 2022
+            &mdash;&nbsp;ArtisTec &nbsp;&middot;&nbsp; Since 2022
           </p>
         </div>
       </section>
@@ -389,7 +389,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-[13.5px] leading-[1.9] text-gray-500">
                 <p>
-                  Artistec was born from the frustration of seeing brilliant ideas
+                  ArtisTec was born from the frustration of seeing brilliant ideas
                   get stuck in mediocre execution. Our founders — engineers and
                   designers who had worked across the Gulf, Europe, and North
                   America — decided to build the studio they always wished existed.
@@ -401,7 +401,7 @@ export default function AboutPage() {
                   tens of thousands of people across the Middle East.
                 </p>
                 <p>
-                  Today Artistec operates globally — delivering for clients in the
+                  Today ArtisTec operates globally — delivering for clients in the
                   UAE, Saudi Arabia, India, the UK, and the US. Each project is
                   staffed by senior engineers and designers who treat your product
                   as if it were their own startup.
@@ -482,7 +482,7 @@ export default function AboutPage() {
             className={cn('mb-16', !principlesVisible ? 'card-hidden' : 'card-animate')}
           >
             <p className="mb-3 text-[9px] font-semibold uppercase tracking-[0.4em] text-[#7c3aed]/60">
-              Why Artistec
+              Why ArtisTec
             </p>
             <h2 className="text-[2rem] font-semibold leading-[1.07] tracking-[-0.04em] text-gray-900 sm:text-[2.6rem]">
               The principles that drive

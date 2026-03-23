@@ -2,21 +2,21 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
-  description: 'Terms and conditions governing the use of Artistec services and website.',
+  description: 'Terms and conditions governing the use of ArtisTec services and website.',
   alternates: {
     canonical: 'https://artistec.co/terms',
   },
   openGraph: {
-    title: 'Terms & Conditions | Artistec',
-    description: 'Terms and conditions governing the use of Artistec services and website.',
+    title: 'Terms & Conditions | ArtisTec',
+    description: 'Terms and conditions governing the use of ArtisTec services and website.',
     url: 'https://artistec.co/terms',
-    siteName: 'Artistec',
+    siteName: 'ArtisTec',
     images: [
       {
         url: '/seo.png',
         width: 1200,
         height: 630,
-        alt: 'Artistec Terms & Conditions',
+        alt: 'ArtisTec Terms & Conditions',
       },
     ],
     locale: 'en_US',
@@ -24,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Terms & Conditions | Artistec',
-    description: 'Terms and conditions governing the use of Artistec services and website.',
+    title: 'Terms & Conditions | ArtisTec',
+    description: 'Terms and conditions governing the use of ArtisTec services and website.',
     images: ['/seo.png'],
   },
 }

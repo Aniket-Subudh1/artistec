@@ -23,7 +23,7 @@ const sections = [
       'To respond to enquiries, deliver the services you request, and manage our client relationships.',
       'To send project updates, invoices, and relevant service communications. We do not send unsolicited marketing emails without your explicit consent.',
       'To analyse website usage in aggregate, improve our content, and understand which services are most relevant to our visitors.',
-      'To comply with legal obligations and protect the legitimate interests of Artistec and its clients.',
+      'To comply with legal obligations and protect the legitimate interests of ArtisTec and its clients.',
     ],
   },
   {
@@ -32,7 +32,7 @@ const sections = [
     body: [
       'We do not sell, rent, or trade your personal information to third parties.',
       'We may share limited data with trusted service providers (e.g. hosting, analytics, payment processors) who are contractually obligated to handle it securely and only as instructed.',
-      'We may disclose information when required by law, a court order, or to protect the rights and safety of Artistec, our clients, or the public.',
+      'We may disclose information when required by law, a court order, or to protect the rights and safety of ArtisTec, our clients, or the public.',
     ],
   },
   {
@@ -153,7 +153,7 @@ export default function PrivacyPage() {
           {/* intro */}
           <div className="mb-14 rounded-2xl border border-[#e0d4fb]/60 bg-[#f7f3ff] p-8">
             <p className="text-[15px] leading-[1.9] text-[#1e0a3c]/70">
-              Artistec (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) is committed to protecting your privacy. This policy explains what personal information we collect, how we use it, and what rights you have in relation to it. By using our website or services, you agree to the practices described herein.
+              ArtisTec (&ldquo;we&rdquo;, &ldquo;our&rdquo;, or &ldquo;us&rdquo;) is committed to protecting your privacy. This policy explains what personal information we collect, how we use it, and what rights you have in relation to it. By using our website or services, you agree to the practices described herein.
             </p>
           </div>
 

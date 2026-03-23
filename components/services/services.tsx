@@ -293,7 +293,7 @@ export default function Services() {
               className="max-w-md text-[14px] leading-[1.85] text-gray-500 blur-in"
               style={{ animationDelay: '0.55s', animationFillMode: 'both', opacity: visible ? undefined : 0 }}
             >
-              From intelligent software and AI automation to physical-world robotics and smart systems — we design, build, and deliver across every technical domain Artistec operates in.
+              From intelligent software and AI automation to physical-world robotics and smart systems — we design, build, and deliver across every technical domain ArtisTec operates in.
             </p>
 
             <div
@@ -434,12 +434,12 @@ export default function Services() {
             >
               <Terminal
                 theme="light"
-                username="artistec"
+                username="ArtisTec"
                 commands={[
-                  'artistec deploy --project skybridge --env prod',
+                  'ArtisTec deploy --project skybridge --env prod',
                   'npm run build',
-                  'artistec status --all',
-                  'artistec logs --service api --tail 20',
+                  'ArtisTec status --all',
+                  'ArtisTec logs --service api --tail 20',
                 ]}
                 outputs={{
                   0: [

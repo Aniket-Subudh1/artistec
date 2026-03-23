@@ -75,10 +75,10 @@ export default function Footer() {
       >
         <Link href="/" className="flex shrink-0 items-center gap-2.5 group">
           <div className="h-8 w-8 overflow-hidden rounded-lg ring-1 ring-[#a78bfa]/20 transition-all duration-200 group-hover:ring-[#a78bfa]/50">
-            <Image src="/logo.png" width={32} height={32} alt="Artistec logo" className="h-full w-full object-cover" />
+            <Image src="/logo.png" width={32} height={32} alt="ArtisTec logo" className="h-full w-full object-cover" />
           </div>
           <span className="text-[13.5px] font-bold tracking-[0.04em] text-white/90">
-            ARTISTEC
+            ArtisTec
           </span>
           <span
             className="ml-0.5 h-1.5 w-1.5 rounded-full bg-[#a78bfa] opacity-80"
@@ -102,7 +102,7 @@ export default function Footer() {
         className="relative z-10 mx-auto flex max-w-7xl flex-col items-start justify-between gap-3 px-5 py-4 sm:flex-row sm:items-center sm:px-8 md:px-12 lg:px-16 xl:px-24"
       >
         <p className="text-[11.5px] text-white/28">
-          © {year} Artistec. All Rights Reserved.
+          © {year} ArtisTec. All Rights Reserved.
         </p>
 
         <div className="flex items-center gap-2.5">
@@ -154,7 +154,7 @@ export default function Footer() {
               backgroundClip: 'text',
             }}
           >
-            ARTISTEC
+            ArtisTec
           </span>
         </div>
       </div>
